@@ -3,7 +3,6 @@ import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import NavLink from "./NavLink";
 import m9Logo from "@/public/assets/m9logo.png";
-// import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import MenuOverlay from "./MenuOverlay";
 import Image from "next/image";
 
@@ -19,10 +18,6 @@ const navLinks = [
   {
     title: "Football Scores",
     path: "/footballscores",
-  },
-  {
-    title: "Contact Us",
-    path: "/contact",
   },
 ];
 
