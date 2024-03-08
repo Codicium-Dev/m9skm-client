@@ -9,6 +9,10 @@ import Image from "next/image";
 
 const navLinks = [
   {
+    title: "Home",
+    path: "/",
+  },
+  {
     title: "Blogs",
     path: "/blogs",
   },
@@ -53,14 +57,11 @@ const Navbar = ({ visibleDefault, fixed = true }: Props) => {
   return (
     <header>
       <nav
-        className={`${
-          fixed ? "fixed" : "sticky"
-        } mx-auto border-b border-[#33353F] text-black top-0 left-0 right-0 z-10 bg-[#fffafaec] bg-opacity-100 transition-all duration-300 ${
-          visible ? "bg-opacity-100" : "bg-opacity-0 -translate-y-full"
-        }`}
+        className={`
+        sticky mx-auto text-black top-0 left-0 right-0 z-10 bg-transparent transition-all duration-300`}
       >
-        <div className="flex container lg:py-4 flex-wrap items-center justify-between mx-auto px-4 py-2">
-          <Link href="/" className="text-2xl md:text-5xl font-semibold">
+        <div className="flex container lg:py-4 flex-wrap items-center justify-between mx-auto px-16 py-8">
+          <Link href="/">
             <Image width={80} src={m9Logo} alt="logo" />
           </Link>
           <div className="mobile-menu block md:hidden">

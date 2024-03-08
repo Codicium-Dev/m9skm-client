@@ -1,12 +1,13 @@
-"use client";
-import { Button } from "@/components/ui/button";
 import Navbar from "./components/nav/Navbar";
+import Hero from "./components/Home/Hero";
 
 export default function Home() {
   return (
-    <main className="">
+    <main className="bg-[#FEA61F]">
       <Navbar visibleDefault={true} fixed={false} />
-      Home
+      <div className="container">
+        <Hero />
+      </div>
     </main>
   );
 }
