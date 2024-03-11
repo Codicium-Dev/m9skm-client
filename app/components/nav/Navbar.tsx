@@ -5,6 +5,8 @@ import NavLink from "./NavLink";
 import m9Logo from "@/public/assets/m9logo.png";
 import MenuOverlay from "./MenuOverlay";
 import Image from "next/image";
+import { FaBars } from "react-icons/fa6";
+import { IoCloseSharp } from "react-icons/io5";
 
 const navLinks = [
   {
@@ -55,30 +57,37 @@ const Navbar = ({ visibleDefault, fixed = true }: Props) => {
         className={`
         sticky mx-auto text-black top-0 left-0 right-0 z-10 bg-transparent transition-all duration-300`}
       >
-        <div className="flex container lg:py-4 flex-wrap items-center justify-between mx-auto px-16 py-8">
+        <div className="flex lg:py-4 flex-wrap items-center justify-between mx-auto px-5 lg:px-20 my-3 md:my-0">
           <Link href="/">
-            <Image width={80} src={m9Logo} alt="logo" />
+            <div className="w-[50px] h-[50px] md:w-[60px] md:h-[60px] lg:w-[100px] lg:h-[100px]">
+              <Image
+                width={50}
+                src={m9Logo}
+                alt="logo"
+                className="w-full h-full"
+              />
+            </div>
           </Link>
           <div className="mobile-menu block md:hidden">
             {!navbarOpen ? (
               <button
                 onClick={() => setNavbarOpen(true)}
-                className="flex items-center px-3 py-2 border rounded border-slate-800 hover:opacity-70 transition-all"
+                className="flex items-center p-2 border rounded border-slate-800 hover:opacity-70 transition-all"
               >
-                {/* <Bars3Icon className="h-5 w-5" /> */}
-                --- --- ---
+                <FaBars />
               </button>
             ) : (
               <button
                 onClick={() => setNavbarOpen(false)}
-                className="flex items-center px-3 py-2 border rounded border-slate-800 hover:opacity-70 transition-all"
+                className="flex items-center p-2 border rounded border-slate-800 hover:opacity-70 transition-all"
               >
-                {/* <XMarkIcon className="h-5 w-5" /> */}X
+                <IoCloseSharp />
               </button>
             )}
           </div>
+
           <div className="menu hidden md:block md:w-auto" id="navbar">
-            <ul className="flex p-4 md:p-0 md:flex-row md:space-x-8 mt-0">
+            <ul className="flex p-4 md:p-0 md:flex-row md:space-x-8 mt-0 ">
               {navLinks.map((link, index) => (
                 <li key={index}>
                   <NavLink href={link.path} title={link.title} />
