@@ -7,7 +7,7 @@ interface Props {
 
 const MenuOverlay = ({ links }: Props) => {
   return (
-    <ul className="flex flex-col py-4 items-center">
+    <ul className="flex flex-col py-1 items-center ">
       {links.map(
         (
           link: { path: string; title: string },
