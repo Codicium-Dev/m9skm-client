@@ -8,11 +8,12 @@ import ServiceIcon3 from "../../../public/assets/services/service3.png";
 export default function Services(servicesAcitve: any) {
   return (
     <>
-      <div className="bg-black w-full h-[60px] green block md:hidden">
+      <div className="bg-black w-full h-[60px] block md:hidden">
         {/* background for Explore More Btn */}
       </div>
 
       <div
+        id="servicesSection"
         className={`bg-black text-white py-5 md:py-20 px-3 xl:px-60 ${
           servicesAcitve ? "block" : "hidden"
         }`}

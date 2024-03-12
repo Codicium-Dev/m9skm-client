@@ -87,6 +87,10 @@
 }
 
 @media screen and (min-width: 300px) {
+  .title {
+    font-size: 18px;
+    font-weight: bold;
+  }
   .subTitle {
     font-size: 16px;
     font-weight: bold;
@@ -101,6 +105,10 @@
 }
 
 @media screen and (min-width: 768px) {
+  .title {
+    font-size: 28px;
+    font-weight: bold;
+  }
   .subTitle {
     font-size: 26px;
     font-weight: bold;
@@ -110,11 +118,15 @@
     font-weight: bold;
   }
   .myDesc {
-    font-size: 22px;
+    font-size: 20px;
   }
 }
 
 @media screen and (min-width: 1024px) {
+  .title {
+    font-size: 40px;
+    font-weight: 500;
+  }
   .subTitle {
     font-size: 36px;
     font-weight: bold;
@@ -125,6 +137,6 @@
     /* color: yellowgreen; */
   }
   .myDesc {
-    font-size: 24px;
+    font-size: 20px;
   }
 }

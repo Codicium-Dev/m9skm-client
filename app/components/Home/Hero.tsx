@@ -1,15 +1,12 @@
 "use client";
 import Image from "next/image";
-import heroApp from "@/public/assets/hero_app.png";
+import heroApp from "@/public/assets/home-page/hero_app.png";
 import { Button } from "@/components/ui/button";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { useState } from "react";
+import Link from "next/link";
 
-function Hero(servicesAcitve: any) {
-  const [servicesActive, setServicesActive] = useState(false);
-  const handleServicesActive = () => {
-    setServicesActive(!servicesActive);
-  };
+function Hero() {
   return (
     <div className="relative flex flex-col md:flex-row gap-0 md:gap-10 mx-[20px] md:mx-[80px] lg:mx-[200px] h-[420px] md:h-[450px]">
       <div className="flex-col">
@@ -43,34 +40,18 @@ function Hero(servicesAcitve: any) {
         />
       </div>
 
-      <div className="absolute -bottom-14 md:bottom-0 left-1/2 transform -translate-x-1/2 text-white">
-        <div
-          className={`flex flex-col items-center ${
-            servicesActive ? "hidden" : "block"
-          }`}
-          onClick={handleServicesActive}
-        >
-          <p className="md:text-white font-semibold text-sm md:text-base">
-            Explore More
-          </p>
-          <div>
-            <IoIosArrowDown size={30} />
+      <Link href="#servicesSection" scroll={true}>
+        <div className="absolute -bottom-14 md:bottom-0 left-1/2 transform -translate-x-1/2 text-white">
+          <div className="flex flex-col items-center">
+            <p className="md:text-white font-semibold text-sm md:text-base">
+              Explore More
+            </p>
+            <div>
+              <IoIosArrowDown size={30} />
+            </div>
           </div>
         </div>
-        <div
-          className={`flex flex-col items-center ${
-            servicesActive ? "block" : "hidden"
-          }`}
-          onClick={handleServicesActive}
-        >
-          <p className="md:text-white font-semibold text-sm md:text-base">
-            Show Less
-          </p>
-          <div>
-            <IoIosArrowUp size={30} />
-          </div>
-        </div>
-      </div>
+      </Link>
     </div>
   );
 }

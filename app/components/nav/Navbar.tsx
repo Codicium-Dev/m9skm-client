@@ -2,7 +2,7 @@
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import NavLink from "./NavLink";
-import m9Logo from "@/public/assets/m9logo.png";
+import m9Logo from "@/public/assets/home-page/m9logo.png";
 import MenuOverlay from "./MenuOverlay";
 import Image from "next/image";
 import { FaBars } from "react-icons/fa6";
@@ -57,9 +57,9 @@ const Navbar = ({ visibleDefault, fixed = true }: Props) => {
         className={`
         sticky mx-auto text-black top-0 left-0 right-0 z-10 bg-transparent transition-all duration-300`}
       >
-        <div className="flex lg:py-4 flex-wrap items-center justify-between mx-auto px-5 lg:px-20 my-3 md:my-0">
+        <div className="flex md:py-4 flex-wrap items-center justify-between mx-auto px-5 lg:px-20 my-3 md:my-0">
           <Link href="/">
-            <div className="w-[50px] h-[50px] md:w-[60px] md:h-[60px] lg:w-[100px] lg:h-[100px]">
+            <div className="w-[50px] h-[50px] md:w-[60px] md:h-[60px] xl:w-[80px] xl:h-[80px]">
               <Image
                 width={50}
                 src={m9Logo}
