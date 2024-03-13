@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import DemoPic from "../../../public/assets/news/news.jpg";
 import Link from "next/link";
 import { Card, CardContent } from "@/components/ui/card";
@@ -10,8 +10,29 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import axios from "axios";
 
 const News = () => {
+  const [news, setNews] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get(`http://m9.goldenyellowtravel.com/api/v1/blog/list`, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+      .then((res) => {
+        // console.log(res);
+        const fetchedData = res?.data;
+        setNews(fetchedData);
+        // console.log("fetchedData >> ", fetchedData);
+      })
+      .catch((error) => {
+        console.error("Error fetching news:", error);
+      });
+  }, []);
+  console.log(news);
   return (
     <div className="bg-black h-fit lg:h-[550px] xl:h-[630px] px-10 xl:px-[190px] py-[30px] flex flex-row justify-center items-center">
       {/* Carousal */}
