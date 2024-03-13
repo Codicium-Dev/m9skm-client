@@ -11,6 +11,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import axios from "axios";
+import { url } from "inspector";
 
 const News = () => {
   const [news, setNews] = useState([]);
@@ -24,7 +25,7 @@ const News = () => {
       })
       .then((res) => {
         // console.log(res);
-        const fetchedData = res?.data;
+        const fetchedData = res?.data?.data;
         setNews(fetchedData);
         // console.log("fetchedData >> ", fetchedData);
       })
@@ -43,26 +44,37 @@ const News = () => {
         className=" w-[830px]"
       >
         <CarouselContent className="">
-          {Array.from({ length: 7 }).map((_, index) => (
-            <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3 ">
+          {news?.map((newItem: any) => (
+            <CarouselItem
+              key={newItem.id}
+              className="md:basis-1/2 lg:basis-1/3 "
+            >
               <div className="h-[300px] rounded-xl overflow-hidden">
                 <div className="w-full h-full relative">
                   <Image
                     width={140}
                     height={60}
                     src={DemoPic}
-                    alt="PlayStore"
+                    alt="blogs"
+                    loading="lazy"
                     className="w-full h-full object-cover"
                   ></Image>
 
                   {/* text over picture */}
-                  <div className="absolute top-[160px] inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300 bg-black bg-opacity-50 rounded-lg">
-                    <div className="text-white text-center">
-                      <h3 className="text-lg font-semibold">Hover Text</h3>
-                      <p className="text-sm">
-                        Additional information or description Lorem ipsum dolor
-                        sit amet Lorem, ipsum dolor.
-                      </p>
+                  <div className="absolute top-[160px] inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300 bg-black bg-opacity-50">
+                    <div className="text-white p-5">
+                      <h3 className="text-lg font-semibold pb-2">
+                        {newItem.title}
+                      </h3>
+                      <p
+                        className="text-sm"
+                        dangerouslySetInnerHTML={{
+                          __html: newItem?.description
+                            ? newItem.description.substr(0, 90) +
+                              (newItem.description.length > 90 ? "..." : "")
+                            : "",
+                        }}
+                      ></p>
                     </div>
                   </div>
                 </div>
