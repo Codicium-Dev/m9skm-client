@@ -5,6 +5,7 @@ import Services from "./components/Home/Services";
 import { useState } from "react";
 import Matches from "./components/Home/Matches";
 import ShowCase from "./components/Home/ShowCase";
+import News from "./components/Home/News";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <Services />
       <Matches  />
       <ShowCase  />
+      <News  />
     </main>
   );
 }
