@@ -16,7 +16,7 @@ const ShowCase = () => {
 
         <div className="flex flex-col md:flex-row mt-3 md:mt-0 gap-3 md:gap-5 mb-3 items-center">
           <div className="md:mt-5 py-3 px-5 border-2 border-black rounded-md text-center w-[200px] h-[50px] ">
-            <Link href={""}>
+            <Link href={"#"}>
               <span>Download Now</span>
             </Link>
           </div>

@@ -46,7 +46,7 @@ const News = () => {
         <CarouselContent className="">
           {news?.map((newItem: any) => (
             <CarouselItem
-              key={newItem.id}
+              key={newItem?.id}
               className="md:basis-1/2 lg:basis-1/3 "
             >
               <div className="h-[300px] rounded-xl overflow-hidden">
@@ -55,6 +55,7 @@ const News = () => {
                     width={140}
                     height={60}
                     src={DemoPic}
+                    // src={newItem?.photo}
                     alt="blogs"
                     loading="lazy"
                     className="w-full h-full object-cover"
@@ -64,14 +65,14 @@ const News = () => {
                   <div className="absolute top-[160px] inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300 bg-black bg-opacity-50">
                     <div className="text-white p-5">
                       <h3 className="text-lg font-semibold pb-2">
-                        {newItem.title}
+                        {newItem?.title}
                       </h3>
                       <p
                         className="text-sm"
                         dangerouslySetInnerHTML={{
                           __html: newItem?.description
-                            ? newItem.description.substr(0, 90) +
-                              (newItem.description.length > 90 ? "..." : "")
+                            ? newItem?.description.substr(0, 90) +
+                              (newItem?.description.length > 90 ? "..." : "")
                             : "",
                         }}
                       ></p>
