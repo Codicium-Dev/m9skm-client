@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import DemoPic from "../../../public/assets/news/news.jpg";
 import Link from "next/link";
 import { Card, CardContent } from "@/components/ui/card";
@@ -15,6 +15,17 @@ import { url } from "inspector";
 
 const News = () => {
   const [news, setNews] = useState([]);
+  // card hover
+  // const cardRef = useRef(null);
+  // const [isHovered, setIsHovered] = useState(false);
+
+  // const handleMouseEnter = () => {
+  //   setIsHovered(true);
+  // };
+
+  // const handleMouseLeave = () => {
+  //   setIsHovered(false);
+  // };
 
   useEffect(() => {
     axios
@@ -33,7 +44,7 @@ const News = () => {
         console.error("Error fetching news:", error);
       });
   }, []);
-  console.log(news);
+  // console.log(news);
   return (
     <div className="bg-black h-fit lg:h-[550px] xl:h-[630px] px-10 xl:px-[190px] py-[30px] flex flex-row justify-center items-center">
       {/* Carousal */}
@@ -41,7 +52,7 @@ const News = () => {
         opts={{
           align: "center",
         }}
-        className=" w-[830px]"
+        className="w-[200px] md:w-[650px] lg:w-[830px]"
       >
         <CarouselContent className="">
           {news?.map((newItem: any) => (
@@ -49,7 +60,7 @@ const News = () => {
               key={newItem?.id}
               className="md:basis-1/2 lg:basis-1/3 "
             >
-              <div className="h-[300px] rounded-xl overflow-hidden">
+              <div className="h-[300px] rounded-xl overflow-hidden cursor-pointer">
                 <div className="w-full h-full relative">
                   <Image
                     width={140}
@@ -62,8 +73,8 @@ const News = () => {
                   ></Image>
 
                   {/* text over picture */}
-                  <div className="absolute top-[160px] inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300 bg-black bg-opacity-50">
-                    <div className="text-white p-5">
+                  <div className="absolute top-0 pt-[160px] opacity-0 hover:opacity-100 inset-0 flex items-center justify-center transition-opacity duration-500 ">
+                    <div className="text-white p-5 bg-black bg-opacity-50 w-full h-full">
                       <h3 className="text-lg font-semibold pb-2">
                         {newItem?.title}
                       </h3>
