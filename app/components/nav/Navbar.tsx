@@ -54,7 +54,7 @@ const Navbar = ({ visibleDefault, fixed = true }: Props) => {
   return (
     <header>
       <nav
-        className={`
+        className={`  
         sticky mx-auto text-black top-0 left-0 right-0 z-10 bg-transparent transition-all duration-300`}
       >
         <div className="flex md:py-4 flex-wrap items-center justify-between mx-auto px-5 lg:px-20 my-3 md:my-0">
