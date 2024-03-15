@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
-import DemoPic from "../../../public/assets/news/news.jpg";
+import DemoPic from "@/public/assets/news/news.jpg";
 import Link from "next/link";
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -54,10 +54,9 @@ const News = () => {
                   <Image
                     width={140}
                     height={60}
-                    src={DemoPic}
-                    // src={newItem?.photo}
+                    // src={DemoPic}
+                    src={newItem?.photo}
                     alt="blogs"
-                    loading="lazy"
                     className="w-full h-full object-cover"
                   ></Image>
 

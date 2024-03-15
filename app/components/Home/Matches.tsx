@@ -4,8 +4,29 @@ import React, { useEffect, useState } from "react";
 import Team1 from "../../../public/assets/home-page/team-logo1.png";
 import Team2 from "../../../public/assets/home-page/team-logo2.png";
 import axios from "axios";
+import { request } from "http";
 
 const Matches = () => {
+  const fetchMatches = async () => {
+    try {
+      const response = await axios.get(
+        "https://api.football-data.org/v4/matches",
+        {
+          headers: {
+            "X-Auth-Token": "7b642cf08a6e4f62bc459db74f8060ce",
+          },
+        }
+      );
+      console.log(response.data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  useEffect(() => {
+    fetchMatches();
+  }, []);
+
   return (
     // match cards container
     <div className="bg-white flex flex-col items-center md:flex-row gap-5 md:gap-0 justify-center py-10 lg:py-0 h-fit md:h-[180px]">
