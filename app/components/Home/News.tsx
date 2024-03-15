@@ -1,6 +1,5 @@
 import Image from "next/image";
-
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import DemoPic from "../../../public/assets/news/news.jpg";
 import Link from "next/link";
 import { Card, CardContent } from "@/components/ui/card";
@@ -16,17 +15,6 @@ import { url } from "inspector";
 
 const News = () => {
   const [news, setNews] = useState([]);
-  // card hover
-  // const cardRef = useRef(null);
-  // const [isHovered, setIsHovered] = useState(false);
-
-  // const handleMouseEnter = () => {
-  //   setIsHovered(true);
-  // };
-
-  // const handleMouseLeave = () => {
-  //   setIsHovered(false);
-  // };
 
   useEffect(() => {
     axios
@@ -36,16 +24,14 @@ const News = () => {
         },
       })
       .then((res) => {
-        // console.log(res);
         const fetchedData = res?.data?.data;
         setNews(fetchedData);
-        // console.log("fetchedData >> ", fetchedData);
       })
       .catch((error) => {
         console.error("Error fetching news:", error);
       });
   }, []);
-  // console.log(news);
+  
   return (
     <div className="bg-black h-fit lg:h-[550px] xl:h-[630px] px-10 xl:px-[190px] py-[30px] flex flex-row justify-center items-center">
       {/* Carousal */}
