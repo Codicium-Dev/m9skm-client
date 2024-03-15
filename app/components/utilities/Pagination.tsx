@@ -35,34 +35,9 @@ const Pagination = ({ pageCount, currentPage, onPageChange }: any) => {
         nextLabel=">"
         breakClassName="px-3 py-[5.5px] border border-black rounded-md"
         activeClassName={"active"}
+        disabledClassName="hidden"
+        disabledLinkClassName="hidden"
       />
-      {/* <div className="pagination__additional flex red">
-        {Array.from(
-          { length: Math.min(pageCount, 3) },
-          (_, index) => index
-        ).map((page) => (
-          <button
-            key={page}
-            onClick={() => handlePageItemClick(page)}
-            className=""
-          >
-            {page + 1}
-          </button>
-        ))}
-        {pageCount > 3 && currentPage >= 2 && <span>...</span>}
-        {Array.from(
-          { length: Math.min(pageCount - Math.max(pageCount - 3, 0), 3) },
-          (_, index) => pageCount - 3 + index
-        ).map((page) => (
-          <button
-            key={page}
-            onClick={() => handlePageItemClick(page)}
-            className=""
-          >
-            {page + 1}
-          </button>
-        ))}
-      </div> */}
     </div>
   );
 };

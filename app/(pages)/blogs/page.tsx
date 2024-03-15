@@ -5,6 +5,7 @@ import DemoPic from "../../../public/assets/news/news.jpg";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Pagination from "@/app/components/utilities/Pagination";
+import Footer from "@/app/components/Footer";
 
 const PAGE_SIZE = 4;
 
@@ -63,9 +64,9 @@ function page() {
                 <span
                   className="block"
                   dangerouslySetInnerHTML={{
-                    __html: item?.description
-                      ? item?.description.substr(0, 175) +
-                        (item?.description.length > 175 ? "..." : "")
+                    __html: item.description
+                      ? item.description.substr(0, 175) +
+                        (item.description.length > 175 ? "..." : "")
                       : "",
                   }}
                 ></span>
@@ -82,6 +83,7 @@ function page() {
         currentPage={currentPage}
         onPageChange={handlePageChange}
       />
+      <Footer />
     </>
   );
 }
