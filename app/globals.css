@@ -99,6 +99,10 @@
     font-size: 20px;
     font-weight: bold;
   }
+  .blogTitle {
+    font-size: 20px;
+    font-weight: bold;
+  }
   .myDesc {
     font-size: 15px;
   }
@@ -117,6 +121,10 @@
     font-size: 25px;
     font-weight: bold;
   }
+  .blogTitle {
+    font-size: 20px;
+    font-weight: bold;
+  }
   .myDesc {
     font-size: 20px;
   }
@@ -132,9 +140,13 @@
     font-weight: bold;
   }
   .subTitleMM {
-    font-size: 26px;
+    font-size: 20px;
     font-weight: bold;
     /* color: yellowgreen; */
+  }
+  .blogTitle {
+    font-size: 20px;
+    font-weight: bold;
   }
   .myDesc {
     font-size: 20px;

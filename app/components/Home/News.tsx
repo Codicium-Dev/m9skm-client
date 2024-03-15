@@ -41,7 +41,7 @@ const News = () => {
         opts={{
           align: "center",
         }}
-        className=" w-[830px]"
+        className="w-[200px] md:w-[650px] lg:w-[830px]"
       >
         <CarouselContent className="">
           {news?.map((newItem: any) => (
