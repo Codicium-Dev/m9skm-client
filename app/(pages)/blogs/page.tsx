@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Pagination from "@/app/components/utilities/Pagination";
 import Footer from "@/app/components/Footer";
+import Link from "next/link";
 
 const PAGE_SIZE = 4;
 
@@ -49,32 +50,39 @@ function page() {
         {/* card */}
         {paginatedData?.map((item, index) => {
           return (
-            <div key={index} className=" w-[400px] h-[590px] bg-black relative">
-              <div className="w-full h-[300px] ">
-                <Image
-                  src={DemoPic}
-                  width={200}
-                  height={200}
-                  alt="DemoPic"
-                  className="w-full h-full object-cover"
-                ></Image>
+            <Link href={`blogs/${item.id}`}>
+              <div
+                key={index}
+                className=" w-[400px] h-[590px] bg-black relative"
+              >
+                <div className="w-full h-[300px] ">
+                  <Image
+                    src={DemoPic}
+                    width={200}
+                    height={200}
+                    alt="DemoPic"
+                    className="w-full h-full object-cover"
+                  ></Image>
+                </div>
+                <div className="text-white px-5 ">
+                  <span className="block mt-7 mb-3 blogTitle">
+                    {item.title}
+                  </span>
+                  <span
+                    className="block"
+                    dangerouslySetInnerHTML={{
+                      __html: item.description
+                        ? item.description.substr(0, 175) +
+                          (item.description.length > 175 ? "..." : "")
+                        : "",
+                    }}
+                  ></span>
+                  <button className="bg-[#fea61f] px-5 py-1 absolute bottom-7 left-5 text-black rounded-md ">
+                    Continue Reading
+                  </button>
+                </div>
               </div>
-              <div className="text-white px-5 ">
-                <span className="block mt-7 mb-3 blogTitle">{item.title}</span>
-                <span
-                  className="block"
-                  dangerouslySetInnerHTML={{
-                    __html: item.description
-                      ? item.description.substr(0, 175) +
-                        (item.description.length > 175 ? "..." : "")
-                      : "",
-                  }}
-                ></span>
-                <button className="bg-[#fea61f] px-5 py-1 absolute bottom-7 left-5 text-black rounded-md ">
-                  Continue Reading
-                </button>
-              </div>
-            </div>
+            </Link>
           );
         })}
       </div>
