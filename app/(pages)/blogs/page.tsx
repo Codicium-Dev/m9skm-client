@@ -48,16 +48,16 @@ function page() {
       {/* cards container */}
       <div className="flex flex-wrap gap-5 justify-center px-5 py-10 md:px-10 md:py-20 lg:px-[200px] lg:py-10 ">
         {/* card */}
-        {paginatedData?.map((item, index) => {
+        {paginatedData?.map((item:any) => {
           return (
-            <Link href={`blogs/${item.id}`}>
+            <Link href={`blogs/${item?.id}`}>  
               <div
-                key={index}
+                key={item?.id}
                 className=" w-[400px] h-[590px] bg-black relative"
               >
                 <div className="w-full h-[300px] ">
                   <Image
-                    src={DemoPic}
+                    src={item?.photo}
                     width={200}
                     height={200}
                     alt="DemoPic"
@@ -66,14 +66,14 @@ function page() {
                 </div>
                 <div className="text-white px-5 ">
                   <span className="block mt-7 mb-3 blogTitle">
-                    {item.title}
+                    {item?.title}
                   </span>
                   <span
                     className="block"
                     dangerouslySetInnerHTML={{
-                      __html: item.description
-                        ? item.description.substr(0, 175) +
-                          (item.description.length > 175 ? "..." : "")
+                      __html: item?.description
+                        ? item?.description.substr(0, 175) +
+                          (item?.description.length > 175 ? "..." : "")
                         : "",
                     }}
                   ></span>

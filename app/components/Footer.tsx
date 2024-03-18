@@ -26,7 +26,7 @@ const Footer = () => {
             height={50}
             alt="viber-logo"
             className="w-10 h-10 md:w-12 md:h-12"
-          ></Image>
+          ></Image> 
           <p className="text-sm md:text-md">Telegram ဖြင့်ဆက်သွယ်ရန် နှိပ်ပါ</p>
         </div>
         <div className="flex gap-4 md:gap-5 items-center w-[95%] md:min-w-[310px] lg:w-[29%] max-w-[330px] p-3 bg-[#58b961] rounded-lg">

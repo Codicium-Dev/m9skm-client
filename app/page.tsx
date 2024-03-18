@@ -5,7 +5,7 @@ import Services from "./components/Home/Services";
 import { useState } from "react";
 import Matches from "./components/Home/Matches";
 import ShowCase from "./components/Home/ShowCase";
-import News from "./components/Home/News";
+import News from "./components/Home/Blogs";
 import Footer from "./components/Footer";
 
 export default function Home() {
