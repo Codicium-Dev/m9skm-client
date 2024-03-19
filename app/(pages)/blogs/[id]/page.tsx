@@ -40,7 +40,7 @@ const Detail = () => {
     <>
       <Navbar visibleDefault={true} fixed={false} />
 
-      <div className="bg-black mainContainer">
+      <div className="bg-black p-[60px]">
         <Link href={"/"} className="">
           <button className="bg-[#fea61f] px-5 py-2 text-sm rounded-md ">
             &lt; Go Back
@@ -51,15 +51,15 @@ const Detail = () => {
         <div className="flex justify-center mt-5 ">
           {/* card */}
 
-          <div className="cardContainer">
+          <div className="w-1/2">
             <span className="text-white text-2xl font-semibold ">
               {news?.title}
             </span>
 
             <div className="w-full mt-3">
               <Image
-                width={500}
-                height={500}
+                width={800}
+                height={800}
                 src={news?.photo}
                 alt="hero_app"
                 priority

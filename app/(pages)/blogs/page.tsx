@@ -53,7 +53,7 @@ function page() {
             <Link href={`blogs/${item?.id}`}>
               <div
                 key={item?.id}
-                className=" w-[400px] h-[590px] bg-black relative"
+                className=" w-[400px] h-[590px] bg-black relative rounded-md overflow-hidden"
               >
                 <div className="w-full h-[300px] ">
                   <Image
