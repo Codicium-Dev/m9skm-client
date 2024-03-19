@@ -48,9 +48,9 @@ function page() {
       {/* cards container */}
       <div className="flex flex-wrap gap-5 justify-center px-5 py-10 md:px-10 md:py-20 lg:px-[200px] lg:py-10 ">
         {/* card */}
-        {paginatedData?.map((item:any) => {
+        {paginatedData?.map((item: any) => {
           return (
-            <Link href={`blogs/${item?.id}`}>  
+            <Link href={`blogs/${item?.id}`}>
               <div
                 key={item?.id}
                 className=" w-[400px] h-[590px] bg-black relative"
