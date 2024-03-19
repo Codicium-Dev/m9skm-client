@@ -13,7 +13,6 @@ import {
 import axios from "axios";
 import { url } from "inspector";
 
-
 const Blogs = () => {
   const [news, setNews] = useState([]);
 
@@ -48,36 +47,38 @@ const Blogs = () => {
               key={newItem?.id}
               className="md:basis-1/2 lg:basis-1/3 "
             >
-              <div className="h-[300px] rounded-xl overflow-hidden cursor-pointer">
-                <div className="w-full h-full relative">
-                  <Image
-                    width={140}
-                    height={60}
-                    // src={DemoPic}
-                    src={newItem?.photo}
-                    alt="blogs"
-                    className="w-full h-full object-cover"
-                  ></Image>
+              <Link href={`blogs/${newItem?.id}`}>
+                <div className="h-[300px] rounded-xl overflow-hidden cursor-pointer">
+                  <div className="w-full h-full relative">
+                    <Image
+                      width={140}
+                      height={60}
+                      // src={DemoPic}
+                      src={newItem?.photo}
+                      alt="blogs"
+                      className="w-full h-full object-cover"
+                    ></Image>
 
-                  {/* text over picture */}
-                  <div className="absolute top-0 pt-[160px] opacity-0 hover:opacity-100 inset-0 flex items-center justify-center transition-opacity duration-500 ">
-                    <div className="text-white p-5 bg-black bg-opacity-50 w-full h-full">
-                      <h3 className="text-lg font-semibold pb-2">
-                        {newItem?.title}
-                      </h3>
-                      <p
-                        className="text-sm"
-                        dangerouslySetInnerHTML={{
-                          __html: newItem?.description
-                            ? newItem?.description.substr(0, 90) +
-                              (newItem?.description.length > 90 ? "..." : "")
-                            : "",
-                        }}
-                      ></p>
+                    {/* text over picture */}
+                    <div className="absolute top-0 pt-[160px] opacity-0 hover:opacity-100 inset-0 flex items-center justify-center transition-opacity duration-500 ">
+                      <div className="text-white p-5 bg-black bg-opacity-50 w-full h-full">
+                        <h3 className="text-lg font-semibold pb-2">
+                          {newItem?.title}
+                        </h3>
+                        <p
+                          className="text-sm"
+                          dangerouslySetInnerHTML={{
+                            __html: newItem?.description
+                              ? newItem?.description.substr(0, 90) +
+                                (newItem?.description.length > 90 ? "..." : "")
+                              : "",
+                          }}
+                        ></p>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              </Link>
             </CarouselItem>
           ))}
         </CarouselContent>
