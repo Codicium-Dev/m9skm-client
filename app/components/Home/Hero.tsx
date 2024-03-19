@@ -6,6 +6,10 @@ import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { useState } from "react";
 import Link from "next/link";
 
+import Viber from "../../../public/assets/footer/footer-viber.png";
+import Telegram from "../../../public/assets/footer/footer-telegram.png";
+import Phone from "../../../public/assets/footer/footer-phone.png";
+
 function Hero() {
   return (
     <div className="relative flex flex-col md:flex-row gap-0 md:gap-10 mx-[20px] md:mx-[80px] lg:mx-[200px] h-[420px] md:h-[450px]">
@@ -28,6 +32,52 @@ function Hero() {
         >
           Download Now
         </Button>
+
+        {/* new */}
+        <div className="flex flex-col h-fit mt-7">
+          <p className="subTitleMM pb-2 font-bold">ဆက်သွယ်ရန်</p>
+
+          <div className="flex gap-5 ">
+            <Link href={"blogs"}>
+              <div className="flex gap-4 md:gap-5 items-center bg-[#573187] rounded-lg">
+                <Image
+                  src={Viber}
+                  width={50}
+                  height={50}
+                  alt="viber-logo"
+                  className="w-10 h-10 md:w-12 md:h-12"
+                ></Image>
+                {/* <p className="text-sm md:text-md">Viber ဖြင့်ဆက်သွယ်ရန် နှိပ်ပါ</p> */}
+              </div>
+            </Link>
+
+            <Link href={"blogs"}>
+              <div className="flex gap-4 md:gap-5 items-center bg-[#0082be] rounded-lg">
+                <Image
+                  src={Telegram}
+                  width={50}
+                  height={50}
+                  alt="viber-logo"
+                  className="w-10 h-10 md:w-12 md:h-12"
+                ></Image>
+                {/* <p className="text-sm md:text-md">Telegram ဖြင့်ဆက်သွယ်ရန် နှိပ်ပါ </p> */}
+              </div>
+            </Link>
+            <Link href={"blogs"}>
+              <div className="flex gap-4 md:gap-5 items-center bg-[#58b961] rounded-lg">
+                <Image
+                  src={Phone}
+                  width={50}
+                  height={50}
+                  alt="viber-logo"
+                  className="w-10 h-10 md:w-12 md:h-12"
+                ></Image>
+                {/* <p className="text-sm md:text-md">ဖုန်းဖြင့်ဆက်သွယ်မည်</p> */}
+              </div>
+            </Link>
+          </div>
+        </div>
+        {/* new end */}
       </div>
 
       <div className="absolute bottom-0 left-1/2 md:left-auto right-0 transform -translate-x-1/2 md:transform-none w-[150px] min-w-[150px] md:w-[150px] md:min-w-[200px] xl:w-[250px] xl:min-w-[250px]">
