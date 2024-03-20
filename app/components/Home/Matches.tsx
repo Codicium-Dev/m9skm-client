@@ -7,25 +7,25 @@ import axios from "axios";
 import { request } from "http";
 
 const Matches = () => {
-  const fetchMatches = async () => {
-    try {
-      const response = await axios.get(
-        "https://api.football-data.org/v4/matches",
-        {
-          headers: {
-            "X-Auth-Token": "7b642cf08a6e4f62bc459db74f8060ce",
-          },
-        }
-      );
-      console.log(response.data);
-    } catch (error) {
-      console.error(error);
-    }
-  };
+  // const fetchMatches = async () => {
+  //   try {
+  //     const response = await axios.get(
+  //       "https://api.football-data.org/v4/matches",
+  //       {
+  //         headers: {
+  //           "X-Auth-Token": "7b642cf08a6e4f62bc459db74f8060ce",
+  //         },
+  //       }
+  //     );
+  //     console.log(response.data);
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // };
 
-  useEffect(() => {
-    fetchMatches();
-  }, []);
+  // useEffect(() => {
+  //   fetchMatches();
+  // }, []);
 
   return (
     // match cards container

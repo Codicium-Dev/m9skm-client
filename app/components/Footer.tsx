@@ -5,14 +5,12 @@ import Telegram from "../../public/assets/footer/footer-telegram.png";
 import Phone from "../../public/assets/footer/footer-phone.png";
 import Link from "next/link";
 const Footer = () => {
-  const phoneNumber = '09776155260'
-  const viberURL = `viber://add?number=${encodeURIComponent(phoneNumber)}`;
   return (
     <div className="flex flex-col h-auto lg:h-[300px] py-8 ">
       <p className="subTitleMM text-center pb-7 font-bold">ဆက်သွယ်ရန်</p>
 
       <div className="flex flex-wrap flex-col lg:flex-row items-center px-5 justify-center gap-5 text-white font-semibold">
-        <Link href={`${viberURL}`}>
+        <Link href="https://invite.viber.com/?g2=AQAT5AzzN9mJu1KWiT7C2b13nFsiS%2BXoheXLWNkGofLJQxcxCvsS6LWydWhtNBE9">
           <div className="flex gap-4 md:gap-5 items-center w-[95%] md:min-w-[310px] lg:w-[29%] max-w-[330px] p-3 bg-[#573187] rounded-lg">
             <Image
               src={Viber}
