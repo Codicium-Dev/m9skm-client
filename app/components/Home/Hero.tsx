@@ -11,6 +11,10 @@ import Telegram from "../../../public/assets/footer/footer-telegram.png";
 import Phone from "../../../public/assets/footer/footer-phone.png";
 
 function Hero() {
+  const [viberLink, setViberLink] = useState('https://invite.viber.com/?g2=AQAT5AzzN9mJu1KWiT7C2b13nFsiS%2BXoheXLWNkGofLJQxcxCvsS6LWydWhtNBE9');
+  const [telegramLink, setTelegramLink ] = useState('https://t.me/+XsUcIYJ9U4NjYzhl');
+  const phoneNumber = '09776155260';
+
   return (
     <div className="relative flex flex-col md:flex-row gap-0 md:gap-10 mx-[20px] md:mx-[80px] lg:mx-[200px] h-[420px] md:h-[450px]">
       <div className="flex-col">
@@ -38,7 +42,7 @@ function Hero() {
           <p className="subTitleMM pb-2 font-bold">ဆက်သွယ်ရန်</p>
 
           <div className="flex gap-5 ">
-            <Link href={"blogs"}>
+            <Link href={viberLink}>
               <div className="flex gap-4 md:gap-5 items-center bg-[#573187] rounded-lg">
                 <Image
                   src={Viber}
@@ -51,7 +55,7 @@ function Hero() {
               </div>
             </Link>
 
-            <Link href={"blogs"}>
+            <Link href={telegramLink}>
               <div className="flex gap-4 md:gap-5 items-center bg-[#0082be] rounded-lg">
                 <Image
                   src={Telegram}
@@ -63,7 +67,7 @@ function Hero() {
                 {/* <p className="text-sm md:text-md">Telegram ဖြင့်ဆက်သွယ်ရန် နှိပ်ပါ </p> */}
               </div>
             </Link>
-            <Link href={"blogs"}>
+            <Link href={`tel:${phoneNumber}`}>
               <div className="flex gap-4 md:gap-5 items-center bg-[#58b961] rounded-lg">
                 <Image
                   src={Phone}
