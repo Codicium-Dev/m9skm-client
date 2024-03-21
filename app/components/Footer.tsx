@@ -18,9 +18,9 @@ const Footer = () => {
     <div className="flex flex-col h-auto lg:h-[300px] py-8 ">
       <p className="subTitleMM text-center pb-7 font-bold">ဆက်သွယ်ရန်</p>
 
-      <div className="flex flex-wrap flex-col lg:flex-row items-center px-5 justify-center gap-5 text-white font-semibold">
+      <div className="flex flex-col lg:flex-row items-center px-3 md:px-5 justify-center gap-5 text-white font-semibold ">
         <Link href={viberLink}>
-          <div className="flex gap-4 md:gap-5 items-center w-[95%] md:min-w-[310px] lg:w-[29%] max-w-[330px] p-3 bg-[#573187] rounded-lg">
+          <div className="flex gap-4 md:gap-5 items-center w-[290px] md:min-w-[310px] lg:w-[29%] max-w-[330px] p-3 bg-[#573187] rounded-lg blue">
             <Image
               src={Viber}
               width={150}
@@ -33,7 +33,7 @@ const Footer = () => {
         </Link>
 
         <Link href={telegramLink}>
-          <div className="flex gap-4 md:gap-5 items-center w-[95%] md:min-w-[310px] lg:w-[29%] max-w-[330px] p-3 bg-[#0082be] rounded-lg">
+          <div className="flex gap-4 md:gap-5 items-center w-[290px] md:min-w-[310px] lg:w-[29%] max-w-[330px] p-3 bg-[#0082be] rounded-lg">
             <Image
               src={Telegram}
               width={150}
@@ -47,7 +47,7 @@ const Footer = () => {
           </div>
         </Link>
         <Link href={`tel:${phoneNumber}`}>
-          <div className="flex gap-4 md:gap-5 items-center w-[95%] md:min-w-[310px] lg:w-[29%] max-w-[330px] p-3 bg-[#58b961] rounded-lg">
+          <div className="flex gap-4 md:gap-5 items-center w-[290px] md:min-w-[310px] lg:w-[29%] max-w-[330px] p-3 bg-[#58b961] rounded-lg">
             <Image
               src={Phone}
               width={150}
@@ -60,7 +60,7 @@ const Footer = () => {
         </Link>
       </div>
 
-      <div className="flex w-full my-5 px-5 lg:px-20 justify-between">
+      <div className="flex w-full my-5 px-5 lg:px-20 justify-between text-sm md:text-base">
         <p>Privacy Policy</p>
         <p>Terms of Service</p>
       </div>
