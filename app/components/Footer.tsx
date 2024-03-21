@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import React, { useState } from "react";
 import Viber from "../../public/assets/footer/footer-viber.png";
@@ -5,9 +6,13 @@ import Telegram from "../../public/assets/footer/footer-telegram.png";
 import Phone from "../../public/assets/footer/footer-phone.png";
 import Link from "next/link";
 const Footer = () => {
-  const [viberLink, setViberLink] = useState('https://invite.viber.com/?g2=AQAT5AzzN9mJu1KWiT7C2b13nFsiS%2BXoheXLWNkGofLJQxcxCvsS6LWydWhtNBE9');
-  const [telegramLink, setTelegramLink ] = useState('https://t.me/+XsUcIYJ9U4NjYzhl');
-  const phoneNumber = '09776155260';
+  const [viberLink, setViberLink] = useState(
+    "https://invite.viber.com/?g2=AQAT5AzzN9mJu1KWiT7C2b13nFsiS%2BXoheXLWNkGofLJQxcxCvsS6LWydWhtNBE9"
+  );
+  const [telegramLink, setTelegramLink] = useState(
+    "https://t.me/+XsUcIYJ9U4NjYzhl"
+  );
+  const phoneNumber = "09776155260";
 
   return (
     <div className="flex flex-col h-auto lg:h-[300px] py-8 ">
