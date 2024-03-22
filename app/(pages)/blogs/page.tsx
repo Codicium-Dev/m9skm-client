@@ -22,6 +22,7 @@ function page() {
     currentPage * PAGE_SIZE,
     (currentPage + 1) * PAGE_SIZE
   );
+  console.log("current pgae > ", currentPage);
 
   useEffect(() => {
     axios
@@ -45,22 +46,19 @@ function page() {
     <>
       <Navbar visibleDefault={true} fixed={false} />
 
-      {/* cards container */}
       <div className="flex flex-wrap gap-5 justify-center px-3 md:px-10 md:py-20 lg:px-[200px] py-10 lg:py-10 ">
         {/* card */}
         {paginatedData?.map((item: any) => {
           return (
-            <Link href={`blogs/${item?.id}`}>
-              <div
-                key={item?.id}
-                className=" w-full h-[600px] md:w-[400px] md:h-[590px] bg-black relative rounded-md overflow-hidden"
-              >
+            <Link key={item?.id} href={`blogs/${item?.id}`}>
+              <div className=" w-full h-[600px] md:w-[400px] md:h-[590px] bg-black relative rounded-md overflow-hidden">
                 <div className="w-full h-[300px] ">
                   <Image
                     src={item?.photo}
                     width={200}
                     height={200}
                     alt="DemoPic"
+                    priority
                     className="w-full h-full object-cover"
                   ></Image>
                 </div>
@@ -85,11 +83,14 @@ function page() {
           );
         })}
       </div>
-      <Pagination
-        pageCount={Math.ceil(news.length / PAGE_SIZE)}
-        currentPage={currentPage}
-        onPageChange={handlePageChange}
-      />
+
+      {news && (
+        <Pagination
+          pageCount={Math.ceil(news.length / PAGE_SIZE)}
+          onPageChange={handlePageChange}
+        />
+      )}
+
       <Footer />
     </>
   );

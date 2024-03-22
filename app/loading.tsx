@@ -8,8 +8,8 @@ const Loading = () => {
         <Image
           src={Ball}
           alt="loading"
-          width={150}
-          height={150}
+          width={100}
+          height={100}
           className="animate-spin h-14 w-14"
         ></Image>
       </div>

@@ -33,10 +33,14 @@ function page() {
 
   // Filter the array to include only matches with today's date
   const todaysMatches = matches.filter(
-    (match: any) => match.date === "2022-04-13"
+    (match: any) => match.date === todayDate
   );
 
-  // console.log(todaysMatches);
+  const previousMatches = matches.filter(
+    (match: any) => match.date !== todayDate
+  );
+
+  // console.log(previousMatches); 
 
   return (
     <>
@@ -107,7 +111,7 @@ function page() {
         </p>
 
         <div className="flex flex-col gap-5 md:gap-5 lg:gap-10 ">
-          {matches?.map((item: any) => (
+          {previousMatches?.map((item: any) => (
             <div
               key={item.id}
               className="bg-[#fea61f] flex items-center gap-5 md:gap-5 justify-center lg:py-0 h-[100px] md:h-[140px] lg:h-[160px] xl:h-[180px]"
