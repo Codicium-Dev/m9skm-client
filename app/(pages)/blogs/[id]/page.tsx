@@ -40,9 +40,9 @@ const Detail = () => {
     <>
       <Navbar visibleDefault={true} fixed={false} />
 
-      <div className="bg-black p-[60px]">
-        <Link href={"/"} className="">
-          <button className="bg-[#fea61f] px-5 py-2 text-sm rounded-md ">
+      <div className="bg-black p-5 md:p-[60px]">
+        <Link href={"/blogs"} className="">
+          <button className="bg-[#fea61f] px-5 py-2 text-xs md:text-sm rounded-md ">
             &lt; Go Back
           </button>
         </Link>
@@ -51,31 +51,32 @@ const Detail = () => {
         <div className="flex justify-center mt-5 ">
           {/* card */}
 
-          <div className="w-1/2">
+          {news && <div className="w-full md:w-[80%] lg:w-1/2">
             <span className="text-white text-2xl font-semibold ">
-              {news?.title}
+              {news.title}
             </span>
 
             <div className="w-full mt-3">
               <Image
                 width={800}
                 height={800}
-                src={news?.photo}
+                src={news.photo}
                 alt="hero_app"
                 priority
                 className="w-full object-cover"
               />
             </div>
 
-            <div className="mt-4 flex flex-col gap-4 w-full text-white text-lg">
+            <div className="mt-4 flex flex-col gap-4 w-full text-white text-sm md:text-base lg:text-lg">
               <span
                 className="block"
                 dangerouslySetInnerHTML={{
-                  __html: news?.description ? news?.description : "",
+                  __html: news.description ? news.description : "",
                 }}
               ></span>
             </div>
-          </div>
+          </div>}
+          
         </div>
       </div>
 

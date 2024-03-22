@@ -1,44 +1,47 @@
 // components/Pagination.ts
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ReactPaginate from "react-paginate";
 
-const Pagination = ({ pageCount, currentPage, onPageChange }: any) => {
-  const handleFirstPageClick = () => {
-    onPageChange(0);
+const Pagination = ({ pageCount, onPageChange }: any) => {
+  const loadingState = () => {
+    return "";
   };
 
-  const handleLastPageClick = () => {
-    onPageChange(pageCount - 1);
-  };
+  // const goToFirstPage = () => {
+  //   onPageChange(0); // Navigate to the first page
+  // };
 
-  const handlePageItemClick = (page: any) => {
-    onPageChange(page);
-  };
+  // const goToLastPage = () => {
+  //   onPageChange(pageCount - 1); // Navigate to the last page
+  // };
+
+  // console.log('current page in pagination >', currentPage);
 
   return (
     <div className="pagination flex gap-3 justify-center pb-20 select-none">
       <ReactPaginate
         pageCount={pageCount}
-        pageRangeDisplayed={3}
-        marginPagesDisplayed={3}
+        pageRangeDisplayed={4}
+        marginPagesDisplayed={1}
         onPageChange={({ selected }) => onPageChange(selected)}
         containerClassName={
           "pagination__list flex gap-1 md:gap-3 items-center text-xs md:text-lg "
         }
         pageLinkClassName={"px-[9px] py-2 border border-black rounded-md"}
-        activeLinkClassName={"bg-black text-white"}
+        activeLinkClassName={"bg-black text-white font-semibold"}
         previousLinkClassName={
-          "px-3 py-[6.5px] border border-black rounded-md text-white font-semibold text-xs md:text-lg"
+          "px-3 py-[8px] md:py-[6.5] border border-black rounded-md text-white font-semibold text-xs md:text-lg"
         }
         nextLinkClassName={
-          "px-3 py-[6.5px] border border-black rounded-md text-white font-semibold text-xs md:text-lg"
+          "px-3 py-[8px] md:py-[6.5] border border-black rounded-md text-white font-semibold text-xs md:text-lg"
         }
         previousLabel="<"
         nextLabel=">"
-        breakClassName="px-3 py-[5.5px] border border-black rounded-md"
+        breakClassName="hidden"
         activeClassName={"active"}
         disabledClassName="hidden"
         disabledLinkClassName="hidden"
+        renderOnZeroPageCount={loadingState}
       />
     </div>
   );
