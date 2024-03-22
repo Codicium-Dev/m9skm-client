@@ -46,14 +46,14 @@ function page() {
       <Navbar visibleDefault={true} fixed={false} />
 
       {/* cards container */}
-      <div className="flex flex-wrap gap-5 justify-center px-5 py-10 md:px-10 md:py-20 lg:px-[200px] lg:py-10 ">
+      <div className="flex flex-wrap gap-5 justify-center px-3 md:px-10 md:py-20 lg:px-[200px] py-10 lg:py-10 ">
         {/* card */}
         {paginatedData?.map((item: any) => {
           return (
             <Link href={`blogs/${item?.id}`}>
               <div
                 key={item?.id}
-                className=" w-[400px] h-[590px] bg-black relative rounded-md overflow-hidden"
+                className=" w-full h-[600px] md:w-[400px] md:h-[590px] bg-black relative rounded-md overflow-hidden"
               >
                 <div className="w-full h-[300px] ">
                   <Image
@@ -68,15 +68,14 @@ function page() {
                   <span className="block mt-7 mb-3 blogTitle">
                     {item?.title}
                   </span>
-                  <span
-                    className="block"
+                  <p
                     dangerouslySetInnerHTML={{
                       __html: item?.description
                         ? item?.description.substr(0, 175) +
                           (item?.description.length > 175 ? "..." : "")
                         : "",
                     }}
-                  ></span>
+                  ></p>
                   <button className="bg-[#fea61f] px-5 py-1 absolute bottom-7 left-5 text-black rounded-md ">
                     Continue Reading
                   </button>
