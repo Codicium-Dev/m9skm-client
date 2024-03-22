@@ -11,12 +11,16 @@ import Telegram from "../../../public/assets/footer/footer-telegram.png";
 import Phone from "../../../public/assets/footer/footer-phone.png";
 
 function Hero() {
-  const [viberLink, setViberLink] = useState('https://invite.viber.com/?g2=AQAT5AzzN9mJu1KWiT7C2b13nFsiS%2BXoheXLWNkGofLJQxcxCvsS6LWydWhtNBE9');
-  const [telegramLink, setTelegramLink ] = useState('https://t.me/+XsUcIYJ9U4NjYzhl');
-  const phoneNumber = '09776155260';
+  const [viberLink, setViberLink] = useState(
+    "https://invite.viber.com/?g2=AQAT5AzzN9mJu1KWiT7C2b13nFsiS%2BXoheXLWNkGofLJQxcxCvsS6LWydWhtNBE9"
+  );
+  const [telegramLink, setTelegramLink] = useState(
+    "https://t.me/+XsUcIYJ9U4NjYzhl"
+  );
+  const phoneNumber = "09776155260";
 
   return (
-    <div className="relative flex flex-col md:flex-row gap-0 md:gap-10 mx-[20px] md:mx-[80px] lg:mx-[200px] h-[420px] md:h-[450px]">
+    <div className="relative flex flex-col md:flex-row gap-0 md:gap-10 mx-[20px] md:mx-[80px] lg:mx-[200px] h-[520px] md:h-[450px]">
       <div className="flex-col">
         <div>
           <h1 className="text-xl lg:text-4xl font-bold lg:mt-[50px] w-full xl:w-[540px] ">

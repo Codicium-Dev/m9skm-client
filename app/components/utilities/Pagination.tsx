@@ -22,14 +22,16 @@ const Pagination = ({ pageCount, currentPage, onPageChange }: any) => {
         pageRangeDisplayed={3}
         marginPagesDisplayed={3}
         onPageChange={({ selected }) => onPageChange(selected)}
-        containerClassName={"pagination__list flex gap-3 items-center"}
+        containerClassName={
+          "pagination__list flex gap-1 md:gap-3 items-center text-xs md:text-lg "
+        }
         pageLinkClassName={"px-[9px] py-2 border border-black rounded-md"}
         activeLinkClassName={"bg-black text-white"}
         previousLinkClassName={
-          "px-3 py-[6.5px] border border-black rounded-md text-white font-semibold text-lg"
+          "px-3 py-[6.5px] border border-black rounded-md text-white font-semibold text-xs md:text-lg"
         }
         nextLinkClassName={
-          "px-3 py-[6.5px] border border-black rounded-md text-white font-semibold text-lg"
+          "px-3 py-[6.5px] border border-black rounded-md text-white font-semibold text-xs md:text-lg"
         }
         previousLabel="<"
         nextLabel=">"

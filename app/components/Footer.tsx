@@ -20,7 +20,7 @@ const Footer = () => {
 
       <div className="flex flex-col lg:flex-row items-center px-3 md:px-5 justify-center gap-5 text-white font-semibold ">
         <Link href={viberLink}>
-          <div className="flex gap-4 md:gap-5 items-center w-[290px] md:min-w-[310px] lg:w-[29%] max-w-[330px] p-3 bg-[#573187] rounded-lg blue">
+          <div className="flex gap-4 md:gap-5 items-center w-[290px] md:min-w-[310px] lg:w-[29%] max-w-[330px] p-3 bg-[#573187] rounded-lg">
             <Image
               src={Viber}
               width={150}
