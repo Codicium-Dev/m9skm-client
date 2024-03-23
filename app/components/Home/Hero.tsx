@@ -10,7 +10,7 @@ import Viber from "../../../public/assets/footer/footer-viber.png";
 import Telegram from "../../../public/assets/footer/footer-telegram.png";
 import Phone from "../../../public/assets/footer/footer-phone.png";
 
-function Hero() {
+function Hero({ title, description }: any) {
   const [viberLink, setViberLink] = useState(
     "https://invite.viber.com/?g2=AQAT5AzzN9mJu1KWiT7C2b13nFsiS%2BXoheXLWNkGofLJQxcxCvsS6LWydWhtNBE9"
   );
@@ -20,17 +20,14 @@ function Hero() {
   const phoneNumber = "09776155260";
 
   return (
-    <div className="relative flex flex-col md:flex-row gap-0 md:gap-10 mx-[20px] md:mx-[80px] lg:mx-[200px] h-[520px] md:h-[450px]">
+    <div className="relative flex flex-col md:flex-row gap-0 md:gap-10 mx-[20px] md:mx-[80px] lg:mx-[200px] h-[520px] md:h-[450px] lg:h-[550px]">
       <div className="flex-col">
         <div>
-          <h1 className="text-xl lg:text-4xl font-bold lg:mt-[50px] w-full xl:w-[540px] ">
-            Lorem ipsum dolor
+          <h1 className="text-xl lg:text-4xl font-bold lg:mt-[50px] w-full xl:w-[540px]">
+            {title}
           </h1>
           <p className="mt-5 text-sm lg:text-lg w-full xl:w-[540px]">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam
-            neque at, tenetur minima exercitationem molestias et quis ipsam quas
-            sapiente eum fuga illum libero ab doloremque delectus nulla vitae
-            veniam.
+            {description}
           </p>
         </div>
 
