@@ -5,7 +5,7 @@ import ServiceIcon1 from "../../../public/assets/services/service1.png";
 import ServiceIcon2 from "../../../public/assets/services/service2.png";
 import ServiceIcon3 from "../../../public/assets/services/service3.png";
 
-export default function Services(servicesAcitve: any) {
+export default function Services({servicesAcitve, title, description}: any) {
   return (
     <>
       <div className="bg-black w-full h-[60px] block md:hidden">
