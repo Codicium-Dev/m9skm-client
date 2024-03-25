@@ -33,7 +33,7 @@ const MatchesFetch = () => {
   const previousMatches = matches.filter(
     (match: any) => match.date !== todayDate
   );
-console.log(todayMatches);
+// console.log(todayMatches);
   return { todayMatches, previousMatches };
 };
 

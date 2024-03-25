@@ -31,10 +31,8 @@ function page() {
         },
       })
       .then((res) => {
-        // console.log(res);
         const fetchedData = res?.data?.data;
         setNews(fetchedData);
-        // console.log("fetchedData >> ", fetchedData);
       })
       .catch((error) => {
         console.error("Error fetching news:", error);

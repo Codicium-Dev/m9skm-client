@@ -31,7 +31,7 @@ const Blogs = () => {
         console.error("Error fetching news:", error);
       });
   }, []);
-  // console.log(news);
+
   return (
     <div className="bg-black h-[375px] lg:h-[550px] xl:h-[630px] px-10 xl:px-[190px] py-[30px] flex flex-row justify-center items-center">
       {/* Carousal */}

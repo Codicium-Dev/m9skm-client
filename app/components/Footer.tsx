@@ -5,15 +5,9 @@ import Viber from "../../public/assets/footer/footer-viber.png";
 import Telegram from "../../public/assets/footer/footer-telegram.png";
 import Phone from "../../public/assets/footer/footer-phone.png";
 import Link from "next/link";
+import Contacts from "./utilities/Contacts";
 const Footer = ({ footerColor }: { footerColor: string }) => {
-  const [viberLink, setViberLink] = useState(
-    "https://invite.viber.com/?g2=AQAT5AzzN9mJu1KWiT7C2b13nFsiS%2BXoheXLWNkGofLJQxcxCvsS6LWydWhtNBE9"
-  );
-  const [telegramLink, setTelegramLink] = useState(
-    "https://t.me/+XsUcIYJ9U4NjYzhl"
-  );
-  const phoneNumber = "09776155260";
-  console.log(footerColor);
+  const {viberLink, telegramLink, phoneNumber} = Contacts();
 
   return (
     <div

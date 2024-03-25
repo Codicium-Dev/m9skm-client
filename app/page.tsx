@@ -59,7 +59,7 @@ export default function Home() {
     setService3Description(texts?.service3_description);
     setNowAvailableDescription(texts?.now_available_description);
   }, [texts]);
-  // console.log(texts);
+
   if (texts) {
     return (
       <main className="bg-[#FEA61F] w-full overflow-hidden ">
