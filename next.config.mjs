@@ -9,7 +9,7 @@ const nextConfig = {
       },
       {
         protocol: "http",
-        hostname: "m9.goldenyellowtravel.com",
+        hostname: "*",
       },
     ],
   },

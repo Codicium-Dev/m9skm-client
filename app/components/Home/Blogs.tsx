@@ -60,7 +60,7 @@ const Blogs = () => {
                     ></Image>
 
                     {/* text over picture */}
-                    <div className="absolute top-0 pt-[160px] opacity-0 hover:opacity-100 inset-0 flex items-center justify-center transition-opacity duration-500 ">
+                    <div className="absolute top-0 pt-[160px] lg:opacity-0 lg:hover:opacity-100 inset-0 flex items-center justify-center transition-opacity duration-500 ">
                       <div className="text-white p-5 bg-black bg-opacity-50 w-full h-full">
                         <h3 className="text-lg font-semibold pb-2">
                           {newItem?.title}
