@@ -6,41 +6,11 @@ import Team2 from "../../../public/assets/home-page/team-logo2.png";
 import Footer from "@/app/components/Footer";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import MatchesFetch from "@/app/components/utilities/MatchesFetch";
+
 function page() {
-  const [matches, setMatches] = useState([]);
-
-  useEffect(() => {
-    axios
-      .get(`http://m9.goldenyellowtravel.com/api/v1/matches/list`, {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      })
-      .then((res) => {
-        // console.log(res);
-        const fetchedData = res?.data?.data;
-        setMatches(fetchedData);
-        // console.log("fetchedData >> ", fetchedData);
-      })
-      .catch((error) => {
-        console.error("Error fetching news:", error);
-      });
-  }, []);
-
-  // Get today's date
-  const today = new Date();
-  const todayDate = today.toISOString().split("T")[0];
-
-  // Filter the array to include only matches with today's date
-  const todaysMatches = matches.filter(
-    (match: any) => match.date === todayDate
-  );
-
-  const previousMatches = matches.filter(
-    (match: any) => match.date !== todayDate
-  );
-
-  // console.log(previousMatches); 
+  const { todayMatches, previousMatches } = MatchesFetch();
+  // console.log("today =>>", todayMatches, "previous ==>", previousMatches);
 
   return (
     <>
@@ -48,7 +18,7 @@ function page() {
 
       <div
         className={`flex flex-col px-3 md:px-5 lg:px-20 xl:px-[190px] pb-7 md:pb-0 ${
-          todaysMatches.length === 0 ? "hidden" : "block"
+          todayMatches?.length === 0 ? "hidden" : "block"
         }`}
       >
         <p className="md:text-xl lg:text-3xl font-bold pb-3 md:pb-5 lg:pb-10">
@@ -57,7 +27,7 @@ function page() {
 
         <div className="flex flex-col gap-5 md:pb-10 lg:pb-[96px]">
           {/* card */}
-          {todaysMatches?.map((item: any) => (
+          {todayMatches?.map((item: any) => (
             <div
               key={item.id}
               className="bg-white flex items-center gap-5 md:gap-5 justify-center lg:py-0 h-[100px] md:h-[140px] lg:h-[160px] xl:h-[180px]"
