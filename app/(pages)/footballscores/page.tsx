@@ -10,7 +10,6 @@ import MatchesFetch from "@/app/components/utilities/MatchesFetch";
 
 function page() {
   const { todayMatches, previousMatches } = MatchesFetch();
-  // console.log("today =>>", todayMatches, "previous ==>", previousMatches);
 
   return (
     <>
@@ -133,7 +132,7 @@ function page() {
         </div>
       </div>
 
-      <Footer footerColor=""/>
+      <Footer footerColor="" />
     </>
   );
 }

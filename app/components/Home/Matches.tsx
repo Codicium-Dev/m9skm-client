@@ -23,16 +23,21 @@ const Matches = () => {
 
   return (
     <div
-      className={`bg-white flex flex-col items-center md:flex-row gap-5 md:gap-0 justify-center py-10 lg:py-0 h-fit md:h-[180px] ${
+      className={`bg-white flex flex-col items-center md:flex-row gap-5 md:gap-0 justify-center lg:py-0 h-full ${
         todayMatches?.length === 0 ? "hidden" : "block"
       }`}
     >
       {todayMatches?.map((match: Match, index: number) => {
-        console.log(match);
         return (
-          <>
-            <div key={match.id} className="flex items-center gap-1 ">
-              <div className="flex flex-col w-[100px] lg:w-[130px]">
+          <div key={match.id}>
+            <div
+              className={`flex items-center gap-1 ${
+                index !== todayMatches.length - 1
+                  ? "md:border-r md:border-r-gray-300 "
+                  : ""
+              }`}
+            >
+              <div className="flex flex-col w-[100px] lg:w-[130px] py-8">
                 <div className="flex justify-center ">
                   <div>
                     <img
@@ -49,7 +54,7 @@ const Matches = () => {
                 </p>
               </div>
               <p className="-mt-4 font-semibold">{match?.time}</p>
-              <div className="flex flex-col w-[100px] lg:w-[130px]">
+              <div className="flex flex-col w-[100px] lg:w-[130px] py-8">
                 <div className="flex justify-center">
                   <div>
                     <img
@@ -66,11 +71,7 @@ const Matches = () => {
                 </p>
               </div>
             </div>
-
-            {index !== todayMatches.length - 1 && (
-              <div className="border border-gray-300 h-full"></div>
-            )}
-          </>
+          </div>
         );
       })}
     </div>
