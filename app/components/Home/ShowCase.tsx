@@ -4,14 +4,13 @@ import MobileApp from "../../../public/assets/home-page/mobile-app.png";
 import PlayStore from "../../../public/assets/home-page/play-store.png";
 import Link from "next/link";
 
-const ShowCase = () => {
+const ShowCase = ({description}:any) => {
   return (
     <div className="h-fit lg:h-[550px] xl:h-[630px] px-10 xl:px-[190px] py-[30px] lg:py-[150px] flex flex-col md:flex-row items-center justify-between">
       <div className="w-full md:w-[60%]">
         <p className="title text-center md:text-left">Now Available</p>
         <p className="myDesc text-center md:text-left">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius
-          voluptatibus quam illum dolor ab, libero qui officia non labore in!
+          {description}
         </p>
 
         <div className="flex flex-col md:flex-row mt-3 md:mt-0 gap-3 md:gap-5 mb-3 items-center">

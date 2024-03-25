@@ -38,7 +38,6 @@ function Hero({ title, description }: any) {
           Download Now
         </Button>
 
-        {/* new */}
         <div className="flex flex-col h-fit mt-7">
           <p className="subTitleMM pb-2 font-bold">ဆက်သွယ်ရန်</p>
 
@@ -52,7 +51,6 @@ function Hero({ title, description }: any) {
                   alt="viber-logo"
                   className="w-10 h-10 md:w-12 md:h-12"
                 ></Image>
-                {/* <p className="text-sm md:text-md">Viber ဖြင့်ဆက်သွယ်ရန် နှိပ်ပါ</p> */}
               </div>
             </Link>
 
@@ -65,7 +63,6 @@ function Hero({ title, description }: any) {
                   alt="viber-logo"
                   className="w-10 h-10 md:w-12 md:h-12"
                 ></Image>
-                {/* <p className="text-sm md:text-md">Telegram ဖြင့်ဆက်သွယ်ရန် နှိပ်ပါ </p> */}
               </div>
             </Link>
             <Link href={`tel:${phoneNumber}`}>
@@ -77,7 +74,7 @@ function Hero({ title, description }: any) {
                   alt="viber-logo"
                   className="w-10 h-10 md:w-12 md:h-12"
                 ></Image>
-                {/* <p className="text-sm md:text-md">ဖုန်းဖြင့်ဆက်သွယ်မည်</p> */}
+                
               </div>
             </Link>
           </div>

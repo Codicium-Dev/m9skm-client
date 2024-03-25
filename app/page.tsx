@@ -8,6 +8,7 @@ import ShowCase from "./components/Home/ShowCase";
 import News from "./components/Home/Blogs";
 import Footer from "./components/Footer";
 import axios from "axios";
+import Loading from "./loading";
 
 export default function Home() {
   const [texts, setTexts] = useState([]);
@@ -40,37 +41,50 @@ export default function Home() {
       .catch((error) => {
         console.error("Error fetching news:", error);
       });
-
-
   }, []);
 
-  useEffect(()=>{
+  useEffect(() => {
     setHeroTitle(texts?.hero_title);
     setHeroDescription(texts?.hero_description);
     setServicePageTitle(texts?.service_page_title);
     setServicePageDescription(texts?.service_page_description);
-    // setService1Icon(texts?.service1_icon);
-    // setService1Title(texts?.service1_title);
-    // setService1Description(texts?.service1_description);
-    // setService2Icon(texts?.service2_icon);
-    // setService2Title(texts?.service2_title);
-    // setService2Description(texts?.service2_description);
-    // setService3Icon(texts?.service3_icon);
-    // setService3Title(texts?.service3_title);
-    // setService3Description(texts?.service3_description);
-    // setNowAvailableDescription(texts?.now_available_description);
-  },[texts])
-console.log(heroDescription);
-
-  return (
-    <main className="bg-[#FEA61F] w-full overflow-hidden ">
-      <Navbar visibleDefault={true} fixed={false} />
-      <Hero title={heroTitle} description={heroDescription} />
-      <Services title={servicePageTitle} descripiton={servicePageDescription} />
-      <Matches />
-      <ShowCase />
-      <News />
-      <Footer />
-    </main>
-  );
+    setService1Icon(texts?.service1_icon);
+    setService1Title(texts?.service1_title);
+    setService1Description(texts?.service1_description);
+    setService2Icon(texts?.service2_icon);
+    setService2Title(texts?.service2_title);
+    setService2Description(texts?.service2_description);
+    setService3Icon(texts?.service3_icon);
+    setService3Title(texts?.service3_title);
+    setService3Description(texts?.service3_description);
+    setNowAvailableDescription(texts?.now_available_description);
+  }, [texts]);
+console.log(texts);
+  if (texts) {
+    return (
+      <main className="bg-[#FEA61F] w-full overflow-hidden ">
+        <Navbar visibleDefault={true} fixed={false} />
+        <Hero title={heroTitle} description={heroDescription} />
+        <Services
+          title={servicePageTitle}
+          descripiton={servicePageDescription}
+          subIcon1={service1Icon}
+          subTitle1={service1Title}
+          subDescription1={service1Description}
+          subIcon2={service2Icon}
+          subTitle2={service2Title}
+          subDescription2={service2Description}
+          subIcon3={service3Icon}
+          subTitle3={service3Title}
+          subDescription3={service3Description}
+        />
+        <Matches />
+        <ShowCase description={nowAvailableDescription} />
+        <News />
+        <Footer />
+      </main>
+    );
+  } else {
+    <Loading />;
+  }
 }
