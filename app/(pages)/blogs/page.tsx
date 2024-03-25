@@ -22,7 +22,6 @@ function page() {
     currentPage * PAGE_SIZE,
     (currentPage + 1) * PAGE_SIZE
   );
-  console.log("current pgae > ", currentPage);
 
   useEffect(() => {
     axios

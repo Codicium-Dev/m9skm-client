@@ -5,7 +5,19 @@ import ServiceIcon1 from "../../../public/assets/services/service1.png";
 import ServiceIcon2 from "../../../public/assets/services/service2.png";
 import ServiceIcon3 from "../../../public/assets/services/service3.png";
 
-export default function Services({servicesAcitve, title, description}: any) {
+export default function Services({
+  title,
+  descripiton,
+  subTitle1,
+  subDescription1,
+  subIcon1,
+  subTitle2,
+  subDescription2,
+  subIcon2,
+  subTitle3,
+  subDescription3,
+  subIcon3,
+}: any) {
   return (
     <>
       <div className="bg-black w-full h-[60px] block md:hidden">
@@ -14,15 +26,10 @@ export default function Services({servicesAcitve, title, description}: any) {
 
       <div
         id="servicesSection"
-        className={`bg-black text-white py-5 md:py-20 px-3 xl:px-60 ${
-          servicesAcitve ? "block" : "hidden"
-        }`}
+        className="bg-black text-white py-5 md:py-20 px-3 xl:px-60"
       >
-        <p className="text-center subTitleMM">ဝန်ဆောင်မှုများ</p>
-        <p className="text-center mt-3 myDesc">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores dicta
-          ad temporibus cumque. Dicta libero rerum dolor laborum nemo adipisci?
-        </p>
+        <p className="text-center subTitleMM">{title}</p>
+        <p className="text-center mt-3 myDesc">{descripiton}</p>
 
         {/* service cards container */}
         <div className="flex flex-col md:flex-row gap-8 xl:gap-14 mt-10">
@@ -32,15 +39,14 @@ export default function Services({servicesAcitve, title, description}: any) {
               <Image
                 width={50}
                 height={50}
-                src={ServiceIcon1}
+                src={subIcon1}
                 alt="hero_app"
                 className="w-full object-cover"
               />
             </div>
-            <p className="text-center">ငွေသွင်းငွေထုတ် လျင်မြန်ခြင်း</p>
+            <p className="text-center">{subTitle1}</p>
             <p className="text-center">
-              Neque porro quisquam est qui dolorem ipsum quia dolor sit amet
-              Neque porro quisquam est qui dolorem ipsum quia dolor sit amet
+              {subDescription1}
             </p>
           </div>
           {/* card */}
@@ -49,15 +55,14 @@ export default function Services({servicesAcitve, title, description}: any) {
               <Image
                 width={50}
                 height={50}
-                src={ServiceIcon2}
+                src={subIcon2}
                 alt="hero_app"
                 className="w-full object-cover"
               />
             </div>
-            <p className="text-center">ငွေသွင်းငွေထုတ် လျင်မြန်ခြင်း</p>
+            <p className="text-center">{subTitle2}</p>
             <p className="text-center">
-              Neque porro quisquam est qui dolorem ipsum quia dolor sit amet
-              Neque porro quisquam est qui dolorem ipsum quia dolor sit amet
+            {subDescription2}
             </p>
           </div>
           {/* card */}
@@ -66,15 +71,14 @@ export default function Services({servicesAcitve, title, description}: any) {
               <Image
                 width={50}
                 height={50}
-                src={ServiceIcon3}
+                src={subIcon3}
                 alt="hero_app"
                 className="w-full object-cover"
               />
             </div>
-            <p className="text-center">ငွေသွင်းငွေထုတ် လျင်မြန်ခြင်း</p>
+            <p className="text-center">{subTitle3}</p>
             <p className="text-center">
-              Neque porro quisquam est qui dolorem ipsum quia dolor sit amet
-              Neque porro quisquam est qui dolorem ipsum quia dolor sit amet
+            {subDescription3}
             </p>
           </div>
         </div>

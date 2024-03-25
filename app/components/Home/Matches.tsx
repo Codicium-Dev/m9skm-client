@@ -7,25 +7,35 @@ import axios from "axios";
 import { request } from "http";
 
 const Matches = () => {
-  // const fetchMatches = async () => {
-  //   try {
-  //     const response = await axios.get(
-  //       "https://api.football-data.org/v4/matches",
-  //       {
-  //         headers: {
-  //           "X-Auth-Token": "7b642cf08a6e4f62bc459db74f8060ce",
-  //         },
-  //       }
-  //     );
-  //     console.log(response.data);
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // };
+  const [matches, setMatches] = useState([]);
 
-  // useEffect(() => {
-  //   fetchMatches();
-  // }, []);
+  useEffect(() => {
+    axios
+      .get(`http://m9.goldenyellowtravel.com/api/v1/matches/list`, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+      .then((res) => {
+        // console.log(res);
+        const fetchedData = res?.data?.data;
+        setMatches(fetchedData);
+        // console.log("fetchedData >> ", fetchedData);
+      })
+      .catch((error) => {
+        console.error("Error fetching news:", error);
+      });
+  }, []);
+
+  // Get today's date
+  const today = new Date();
+  const todayDate = today.toISOString().split("T")[0];
+
+  // Filter the array to include only matches with today's date
+  // const todayMatches = matches.filter((match: any) => match.date === todayDate);
+  const todayMatches = matches.filter((match: any) => match.date === "2024-03-22");
+
+  console.log(todayMatches);
 
   return (
     // match cards container
