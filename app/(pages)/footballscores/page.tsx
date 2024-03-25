@@ -133,7 +133,7 @@ function page() {
         </div>
       </div>
 
-      <Footer />
+      <Footer footerColor=""/>
     </>
   );
 }
