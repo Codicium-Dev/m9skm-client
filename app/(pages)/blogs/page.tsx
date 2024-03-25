@@ -90,7 +90,7 @@ function page() {
         />
       )}
 
-      <Footer />
+      <Footer footerColor={"black"} />
     </>
   );
 }

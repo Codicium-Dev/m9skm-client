@@ -80,7 +80,7 @@ const Detail = () => {
         </div>
       </div>
 
-      <Footer />
+      <Footer footerColor=""/>
     </>
   );
 };

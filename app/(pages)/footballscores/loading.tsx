@@ -18,7 +18,7 @@ const Loading = () => {
           ></Image>
         </div>
       </div>
-      <Footer />
+      <Footer footerColor=""/>
     </>
   );
 };
