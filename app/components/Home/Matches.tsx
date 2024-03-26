@@ -41,11 +41,11 @@ const Matches = () => {
                 <div className="flex justify-center ">
                   <div>
                     <img
-                      width={100}
-                      height={100}
+                      width={150}
+                      height={150}
                       src={match?.home_team_photo}
                       alt="hero_app"
-                      className="object-cover w-[60px] h-[60px]"
+                      className="object-contain w-[60px] h-[60px]"
                     />
                   </div>
                 </div>
@@ -58,11 +58,11 @@ const Matches = () => {
                 <div className="flex justify-center">
                   <div>
                     <img
-                      width={100}
-                      height={100}
+                      width={150}
+                      height={150}
                       src={match?.away_team_photo}
                       alt="hero_app"
-                      className="object-cover w-[60px] h-[60px]"
+                      className="object-contain w-[60px] h-[60px]"
                     />
                   </div>
                 </div>

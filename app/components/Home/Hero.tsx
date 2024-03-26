@@ -12,7 +12,7 @@ import Phone from "../../../public/assets/footer/footer-phone.png";
 import Contacts from "../utilities/Contacts";
 
 function Hero({ title, description }: any) {
-  const {viberLink, telegramLink, phoneNumber} = Contacts();
+  const { viberLink, telegramLink, phoneNumber } = Contacts();
 
   return (
     <div className="relative flex flex-col md:flex-row gap-0 md:gap-10 mx-[20px] md:mx-[80px] lg:mx-[200px] h-[520px] md:h-[450px] lg:h-[550px]">
@@ -28,7 +28,7 @@ function Hero({ title, description }: any) {
 
         <Button
           variant="outline"
-          className="bg-transparent border-black hover:bg-black hover:text-white mt-4 block"
+          className="bg-transparent border-black hover:bg-black hover:text-white mt-4 block transition-all duration-300"
         >
           Download Now
         </Button>
@@ -69,7 +69,6 @@ function Hero({ title, description }: any) {
                   alt="viber-logo"
                   className="w-10 h-10 md:w-12 md:h-12"
                 ></Image>
-                
               </div>
             </Link>
           </div>

@@ -51,9 +51,8 @@ const Blogs = () => {
                 <div className="h-[300px] rounded-xl overflow-hidden cursor-pointer">
                   <div className="w-full h-full relative">
                     <Image
-                      width={140}
-                      height={60}
-                      // src={DemoPic}
+                      width={260}
+                      height={300}
                       src={newItem?.photo}
                       alt="blogs"
                       className="w-full h-full object-cover"
