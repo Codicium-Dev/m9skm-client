@@ -1,21 +1,10 @@
 // components/Pagination.ts
-import React, { useEffect, useState } from "react";
 import ReactPaginate from "react-paginate";
 
 const Pagination = ({ pageCount, onPageChange }: any) => {
   const loadingState = () => {
     return "";
   };
-
-  // const goToFirstPage = () => {
-  //   onPageChange(0); // Navigate to the first page
-  // };
-
-  // const goToLastPage = () => {
-  //   onPageChange(pageCount - 1); // Navigate to the last page
-  // };
-
-  // console.log('current page in pagination >', currentPage);
 
   return (
     <div className="pagination flex gap-3 justify-center pb-20 select-none">
