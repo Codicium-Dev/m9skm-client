@@ -1,12 +1,13 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { API_URL } from "@/app/constants";
 
 const MatchesFetch = () => {
   const [matches, setMatches] = useState([]);
 
   useEffect(() => {
     axios
-      .get(`http://m9.goldenyellowtravel.com/api/v1/matches/list`, {
+      .get(`${API_URL}/matches/list`, {
         headers: {
           "Content-Type": "application/json",
         },
@@ -33,7 +34,7 @@ const MatchesFetch = () => {
   const previousMatches = matches.filter(
     (match: any) => match.date !== todayDate
   );
-// console.log(todayMatches);
+  // console.log(todayMatches);
   return { todayMatches, previousMatches };
 };
 

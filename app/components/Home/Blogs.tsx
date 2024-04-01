@@ -1,8 +1,6 @@
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
-import DemoPic from "../../../public/assets/news/news.jpg";
 import Link from "next/link";
-import { Card, CardContent } from "@/components/ui/card";
 import {
   Carousel,
   CarouselContent,
@@ -11,14 +9,14 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import axios from "axios";
-import { url } from "inspector";
+import { API_URL } from "@/app/constants";
 
 const Blogs = () => {
   const [news, setNews] = useState([]);
 
   useEffect(() => {
     axios
-      .get(`http://m9.goldenyellowtravel.com/api/v1/blog/list`, {
+      .get(`${API_URL}/blog/list`, {
         headers: {
           "Content-Type": "application/json",
         },
@@ -51,8 +49,8 @@ const Blogs = () => {
                 <div className="h-[300px] rounded-xl overflow-hidden cursor-pointer">
                   <div className="w-full h-full relative">
                     <Image
-                      width={260}
-                      height={300}
+                      width={360}
+                      height={400}
                       src={newItem?.photo}
                       alt="blogs"
                       className="w-full h-full object-cover"

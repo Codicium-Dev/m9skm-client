@@ -7,6 +7,7 @@ import axios from "axios";
 import Pagination from "@/app/components/utilities/Pagination";
 import Footer from "@/app/components/Footer";
 import Link from "next/link";
+import { API_URL } from "@/app/constants";
 
 const PAGE_SIZE = 4;
 
@@ -25,7 +26,7 @@ function page() {
 
   useEffect(() => {
     axios
-      .get(`http://m9.goldenyellowtravel.com/api/v1/blog/list`, {
+      .get(`${API_URL}/blog/list`, {
         headers: {
           "Content-Type": "application/json",
         },
@@ -52,8 +53,8 @@ function page() {
                 <div className="w-full h-[300px] ">
                   <Image
                     src={item?.photo}
-                    width={200}
-                    height={200}
+                    width={400}
+                    height={300}
                     alt="DemoPic"
                     priority
                     className="w-full h-full object-cover"

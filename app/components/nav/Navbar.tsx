@@ -61,7 +61,8 @@ const Navbar = ({ visibleDefault, fixed = true }: Props) => {
           <Link href="/">
             <div className="w-[50px] h-[50px] md:w-[60px] md:h-[60px] xl:w-[80px] xl:h-[80px]">
               <Image
-                width={50}
+                width={80}
+                height={80}
                 src={m9Logo}
                 alt="logo"
                 className="w-full h-full"
@@ -89,7 +90,7 @@ const Navbar = ({ visibleDefault, fixed = true }: Props) => {
           <div className="menu hidden md:block md:w-auto" id="navbar">
             <ul className="flex p-4 md:p-0 md:flex-row md:space-x-8 mt-0 ">
               {navLinks.map((link, index) => (
-                <li key={index}>
+                <li className="" key={index}>
                   <NavLink href={link.path} title={link.title} />
                 </li>
               ))}

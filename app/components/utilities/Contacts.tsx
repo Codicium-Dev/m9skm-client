@@ -1,6 +1,4 @@
-// const viberLink = "https://invite.viber.com/?g2=AQAT5AzzN9mJu1KWiT7C2b13nFsiS%2BXoheXLWNkGofLJQxcxCvsS6LWydWhtNBE9"
-// const telegramLink = "https://t.me/+XsUcIYJ9U4NjYzhl"
-
+import { API_URL } from "@/app/constants";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 
@@ -17,7 +15,7 @@ const Contacts = () => {
 
   useEffect(() => {
     axios
-      .get(`http://m9.goldenyellowtravel.com/api/v1/contact/list`, {
+      .get(`${API_URL}/contact/list`, {
         headers: {
           "Content-Type": "application/json",
         },

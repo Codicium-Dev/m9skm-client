@@ -9,6 +9,7 @@ import News from "./components/Home/Blogs";
 import Footer from "./components/Footer";
 import axios from "axios";
 import Loading from "./loading";
+import { API_URL } from "@/app/constants";
 
 export default function Home() {
   const [texts, setTexts]: any = useState([]);
@@ -29,7 +30,7 @@ export default function Home() {
 
   useEffect(() => {
     axios
-      .get(`http://m9.goldenyellowtravel.com/api/v1/text/list`, {
+      .get(`${API_URL}/text/list`, {
         headers: {
           "Content-Type": "application/json",
         },
