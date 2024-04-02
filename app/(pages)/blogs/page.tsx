@@ -1,7 +1,6 @@
 "use client";
 import Navbar from "@/app/components/nav/Navbar";
 import Image from "next/image";
-import DemoPic from "../../../public/assets/news/news.jpg";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Pagination from "@/app/components/utilities/Pagination";
@@ -44,7 +43,7 @@ function page() {
     <>
       <Navbar visibleDefault={true} fixed={false} />
 
-      <div className="flex flex-wrap gap-5 justify-center pt-5 pb-10 ">
+      <div className="flex flex-wrap gap-5 justify-center px-5 pt-5 pb-10 ">
         {/* card */}
         {paginatedData?.map((item: any) => {
           return (

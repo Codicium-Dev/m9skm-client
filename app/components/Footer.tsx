@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import React, { useState } from "react";
+import React from "react";
 import Viber from "../../public/assets/footer/footer-viber.png";
 import Telegram from "../../public/assets/footer/footer-telegram.png";
 import Phone from "../../public/assets/footer/footer-phone.png";
@@ -60,8 +60,14 @@ const Footer = ({ footerColor }: { footerColor: string }) => {
       </div>
 
       <div className="flex w-full my-5 px-5 lg:px-20 justify-between text-sm md:text-base">
-        <p>Privacy Policy</p>
+        <Link href={"/privacy&policy"}>
+          <p>Privacy Policy</p>
+        </Link>
+        <Link href={"/terms"}>
         <p>Terms of Service</p>
+        </Link>
+
+        
       </div>
 
       <p className="mt-5 text-center">Copyright &copy; 2024</p>
