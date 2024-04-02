@@ -2,14 +2,13 @@
 import Image from "next/image";
 import heroApp from "@/public/assets/home-page/hero_app.png";
 import { Button } from "@/components/ui/button";
-import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
-import { useState } from "react";
+import { IoIosArrowDown } from "react-icons/io";
 import Link from "next/link";
-
 import Viber from "../../../public/assets/footer/footer-viber.png";
 import Telegram from "../../../public/assets/footer/footer-telegram.png";
 import Phone from "../../../public/assets/footer/footer-phone.png";
 import Contacts from "../utilities/Contacts";
+import { DIRECT_DOWNLOAD_URL } from "@/app/constants";
 
 function Hero({ title, description }: any) {
   const { viberLink, telegramLink, phoneNumber } = Contacts();
@@ -27,48 +26,48 @@ function Hero({ title, description }: any) {
           </p>
         </div>
 
-        <Button
-          variant="outline"
-          className="bg-transparent border-black hover:bg-black hover:text-white mt-4 block transition-all duration-300"
+        <Link
+          href={DIRECT_DOWNLOAD_URL}
+          className="mt-4 py-2 px-5 rounded-md w-fit border bg-transparent border-black hover:bg-black hover:text-white block transition-all duration-300"
         >
           Download Now
-        </Button>
+        </Link>
 
         <div className="flex flex-col h-fit mt-7 mb-[200px]">
           <p className="subTitleMM pb-2 font-bold">ဆက်သွယ်ရန်</p>
 
           <div className="flex gap-5 ">
             <Link href={viberLink}>
-              <div className="flex gap-4 md:gap-5 items-center bg-[#573187] rounded-lg">
+              <div className="flex gap-4 md:gap-5 items-center bg-[#573187] rounded-lg overflow-hidden hover:scale-105 ">
                 <Image
                   src={Viber}
-                  width={50}
-                  height={50}
+                  width={70}
+                  height={70}
                   alt="viber-logo"
-                  className="w-10 h-10 md:w-12 md:h-12"
+                  className="w-10 h-10 md:w-12 md:h-12 object-cover"
                 ></Image>
               </div>
             </Link>
 
             <Link href={telegramLink}>
-              <div className="flex gap-4 md:gap-5 items-center bg-[#0082be] rounded-lg">
+              <div className="flex gap-4 md:gap-5 items-center bg-[#0082be] rounded-lg overflow-hidden hover:scale-105 ">
                 <Image
                   src={Telegram}
-                  width={50}
-                  height={50}
+                  width={70}
+                  height={70}
                   alt="viber-logo"
-                  className="w-10 h-10 md:w-12 md:h-12"
+                  className="w-10 h-10 md:w-12 md:h-12 object-cover"
                 ></Image>
               </div>
             </Link>
             <Link href={`tel:${phoneNumber}`}>
-              <div className="flex gap-4 md:gap-5 items-center bg-[#58b961] rounded-lg">
+              <div className="flex gap-4 md:gap-5 items-center bg-[#58b961] rounded-lg overflow-hidden hover:scale-105 ">
                 <Image
                   src={Phone}
-                  width={50}
-                  height={50}
+                  width={70}
+                  height={70}
                   alt="viber-logo"
-                  className="w-10 h-10 md:w-12 md:h-12"
+                  className="w-10 h-10 md:w-12 md:h-12 object-cover"
                 ></Image>
               </div>
             </Link>

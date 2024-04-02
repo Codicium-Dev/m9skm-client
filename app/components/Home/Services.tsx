@@ -1,10 +1,6 @@
 "use client";
 import Image from "next/image";
 import React from "react";
-import ServiceIcon1 from "../../../public/assets/services/service1.png";
-import ServiceIcon2 from "../../../public/assets/services/service2.png";
-import ServiceIcon3 from "../../../public/assets/services/service3.png";
-
 export default function Services({
   title,
   descripiton,

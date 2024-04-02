@@ -1,11 +1,7 @@
 "use client";
 import Navbar from "@/app/components/nav/Navbar";
 import Image from "next/image";
-import Team1 from "../../../public/assets/home-page/team-logo1.png";
-import Team2 from "../../../public/assets/home-page/team-logo2.png";
 import Footer from "@/app/components/Footer";
-import axios from "axios";
-import { useEffect, useState } from "react";
 import MatchesFetch from "@/app/components/utilities/MatchesFetch";
 
 function page() {
