@@ -17,17 +17,20 @@ const Matches = () => {
   const { todayMatches } = MatchesFetch();
 
   return (
-    <div className="">
+    <div className="flex justify-center bg-white">
       <div
-        className={`bg-white flex flex-col items-center md:flex-row flex-wrap w-full overflow-x-auto gap-5 md:gap-0 justify-center lg:py-0 h-full ${
+        className={` flex flex-col items-center md:flex-row flex-wrap w-full max-w-[1024px] overflow-x-auto gap-5 md:gap-0 justify-center lg:py-0 h-full ${
           todayMatches?.length === 0 ? "hidden" : "block"
         }`}
       >
         {todayMatches?.map((match: Match, index: number) => {
           return (
-            <div key={match.id} className="w-[250px] h-[170px] py-4">
+            <div
+              key={match.id}
+              className="w-[240px] md:w-[33%] lg:w-[24%] h-[170px] py-4 "
+            >
               <div
-                className={`flex items-center h-full gap-1 ${
+                className={`flex justify-center items-center h-full gap-1 ${
                   index !== todayMatches.length - 1
                     ? "md:border-r md:border-r-gray-300 "
                     : ""
@@ -38,9 +41,10 @@ const Matches = () => {
                 }
                 ${
                   (index + 1) % 4 === 0
-                    ? "lg:border-r-white xl:border-r-gray-300 "
+                    ? "lg:border-r-white 4xl:border-r-gray-300 "
                     : " "
-                }`}
+                }
+                `}
               >
                 <div className="flex flex-col w-[100px] lg:w-[130px] py-8">
                   <div className="flex justify-center ">
