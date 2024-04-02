@@ -44,12 +44,12 @@ function page() {
     <>
       <Navbar visibleDefault={true} fixed={false} />
 
-      <div className="flex flex-wrap gap-5 justify-center px-3 md:px-10 md:py-20 lg:px-[200px] py-10 lg:py-10 ">
+      <div className="flex flex-wrap gap-5 justify-center py-5 ">
         {/* card */}
         {paginatedData?.map((item: any) => {
           return (
             <Link key={item?.id} href={`blogs/${item?.id}`}>
-              <div className=" w-full h-[600px] md:w-[400px] md:h-[590px] bg-black relative rounded-md overflow-hidden">
+              <div className="pb-[100px] w-full h-fit md:w-[400px] bg-black relative rounded-md overflow-hidden ">
                 <div className="w-full h-[300px] ">
                   <Image
                     src={item?.photo}
