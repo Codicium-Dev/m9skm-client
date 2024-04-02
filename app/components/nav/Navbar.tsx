@@ -11,7 +11,7 @@ import { usePathname } from "next/navigation";
 interface Props {
   visibleDefault: boolean;
   fixed?: boolean;
-  blogId?: number;
+  blogId?: string | string[];
 }
 
 const Navbar = ({ visibleDefault, fixed = true, blogId }: Props) => {

@@ -3,7 +3,7 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 
 interface Props {
-  blogId?: number;
+  blogId?: string|string[];
 }
 const MenuOverlay = ({blogId}:Props) => {
   const pathname = usePathname();

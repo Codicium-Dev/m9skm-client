@@ -14,7 +14,7 @@ interface NewsData {
   title: string;
   photo: any;
   description: string;
-  blogId: number;
+  blogId: string | string[];
 }
 const Detail = () => {
   const { id } = useParams();
