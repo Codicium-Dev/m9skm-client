@@ -1,7 +1,6 @@
 "use client";
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
-import NavLink from "./NavLink";
 import m9Logo from "@/public/assets/home-page/m9logo.png";
 import MenuOverlay from "./MenuOverlay";
 import Image from "next/image";
@@ -9,27 +8,13 @@ import { FaBars } from "react-icons/fa6";
 import { IoCloseSharp } from "react-icons/io5";
 import { usePathname } from "next/navigation";
 
-const navLinks = [
-  {
-    title: "Home",
-    path: "/",
-  },
-  {
-    title: "Blogs",
-    path: "/blogs",
-  },
-  {
-    title: "Football Scores",
-    path: "/footballscores",
-  },
-];
-
 interface Props {
   visibleDefault: boolean;
   fixed?: boolean;
+  blogId?: string | string[];
 }
 
-const Navbar = ({ visibleDefault, fixed = true }: Props) => {
+const Navbar = ({ visibleDefault, fixed = true, blogId }: Props) => {
   const [navbarOpen, setNavbarOpen] = useState(false);
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(visibleDefault || false);
@@ -52,9 +37,8 @@ const Navbar = ({ visibleDefault, fixed = true }: Props) => {
     }
   }, [fixed, prevScrollPos, visible]);
 
-// navbar active?
+  // navbar active?
   const pathname = usePathname();
-  console.log(3, pathname);
 
   return (
     <header>
@@ -94,16 +78,42 @@ const Navbar = ({ visibleDefault, fixed = true }: Props) => {
 
           <div className="menu hidden md:block md:w-auto" id="navbar">
             <ul className="flex p-4 md:p-0 md:flex-row md:space-x-8 mt-0 ">
-              {navLinks.map((link, index) => {
-                return(
-                <li className="" key={index}>
-                  <NavLink href={link.path} title={link.title} />
-                </li>
-              )})}
+              <li>
+                <Link
+                  href={"/"}
+                  className={`block py-2 pl-3 pr-4 text-black text-sm lg:text-lg rounded md:p-0 hover:text-[#F2ECC7] ${
+                    pathname === "/" ? "text-white font-semibold" : ""
+                  }`}
+                >
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href={"/blogs"}
+                  className={`block py-2 pl-3 pr-4 text-black text-sm lg:text-lg rounded md:p-0 hover:text-[#F2ECC7] ${
+                    pathname === "/blogs" || pathname === `/blogs/${blogId}` ? "text-white font-semibold" : ""
+                  }`}
+                >
+                  Blogs
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href={"/footballscores"}
+                  className={`block py-2 pl-3 pr-4 text-black text-sm lg:text-lg rounded md:p-0 hover:text-[#F2ECC7] ${
+                    pathname === "/footballscores"
+                      ? "text-white font-semibold"
+                      : ""
+                  }`}
+                >
+                  Footballscores
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
-        {navbarOpen ? <MenuOverlay links={navLinks} /> : null}
+        {navbarOpen ? <MenuOverlay blogId={blogId} /> : null}
       </nav>
     </header>
   );

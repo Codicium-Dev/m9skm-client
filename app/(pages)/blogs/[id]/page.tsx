@@ -14,6 +14,7 @@ interface NewsData {
   title: string;
   photo: any;
   description: string;
+  blogId: string | string[];
 }
 const Detail = () => {
   const { id } = useParams();
@@ -38,7 +39,7 @@ const Detail = () => {
 
   return (
     <>
-      <Navbar visibleDefault={true} fixed={false} />
+      <Navbar visibleDefault={true} fixed={false} blogId={id} />
 
       <div className="bg-black p-5 md:p-[60px]">
         <Link href={"/blogs"} className="">
