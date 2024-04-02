@@ -44,7 +44,7 @@ function page() {
     <>
       <Navbar visibleDefault={true} fixed={false} />
 
-      <div className="flex flex-wrap gap-5 justify-center py-5 ">
+      <div className="flex flex-wrap gap-5 justify-center pt-5 pb-10 ">
         {/* card */}
         {paginatedData?.map((item: any) => {
           return (
