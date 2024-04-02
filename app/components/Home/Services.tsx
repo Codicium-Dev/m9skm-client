@@ -20,13 +20,13 @@ export default function Services({
 }: any) {
   return (
     <>
-      <div className="bg-black w-full h-[60px] block md:hidden">
+      <div className="bg-black w-full h-[60px] block md:hidden ">
         {/* background for Explore More Btn */}
       </div>
 
       <div
         id="servicesSection"
-        className="bg-black text-white py-5 md:py-20 px-3 xl:px-60"
+        className="bg-black text-white py-5 md:py-20 px-3 xl:px-60 select-none"
       >
         <p className="text-center subTitleMM">{title}</p>
         <p className="text-center mt-3 myDesc">{descripiton}</p>
@@ -45,9 +45,7 @@ export default function Services({
               />
             </div>
             <p className="text-center">{subTitle1}</p>
-            <p className="text-center">
-              {subDescription1}
-            </p>
+            <p className="text-center">{subDescription1}</p>
           </div>
           {/* card */}
           <div className="flex flex-col gap-3 w-full md:w-1/3 items-center">
@@ -61,9 +59,7 @@ export default function Services({
               />
             </div>
             <p className="text-center">{subTitle2}</p>
-            <p className="text-center">
-            {subDescription2}
-            </p>
+            <p className="text-center">{subDescription2}</p>
           </div>
           {/* card */}
           <div className="flex flex-col gap-3 w-full md:w-1/3 items-center">
@@ -77,9 +73,7 @@ export default function Services({
               />
             </div>
             <p className="text-center">{subTitle3}</p>
-            <p className="text-center">
-            {subDescription3}
-            </p>
+            <p className="text-center">{subDescription3}</p>
           </div>
         </div>
       </div>

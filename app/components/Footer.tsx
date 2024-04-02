@@ -7,11 +7,11 @@ import Phone from "../../public/assets/footer/footer-phone.png";
 import Link from "next/link";
 import Contacts from "./utilities/Contacts";
 const Footer = ({ footerColor }: { footerColor: string }) => {
-  const {viberLink, telegramLink, phoneNumber} = Contacts();
+  const { viberLink, telegramLink, phoneNumber } = Contacts();
 
   return (
     <div
-      className={`flex flex-col h-auto lg:h-[300px] py-8 ${
+      className={`flex flex-col h-auto lg:h-[300px] py-8 select-none ${
         footerColor === "black" ? "bg-black text-white" : ""
       }`}
     >

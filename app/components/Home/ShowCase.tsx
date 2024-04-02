@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const ShowCase = ({ description }: any) => {
   return (
-    <div className="h-fit lg:h-[550px] xl:h-[630px] px-10 xl:px-[190px] py-[30px] lg:py-[150px] flex flex-col md:flex-row items-center justify-between">
+    <div className="h-fit lg:h-[550px] xl:h-[630px] px-10 xl:px-[190px] py-[30px] lg:py-[150px] flex flex-col md:flex-row items-center justify-between select-none">
       <div className="w-full md:w-[60%]">
         <p className="title text-center md:text-left">Now Available</p>
         <p className="myDesc text-center md:text-left">{description}</p>

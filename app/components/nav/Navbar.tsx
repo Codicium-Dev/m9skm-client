@@ -7,6 +7,7 @@ import MenuOverlay from "./MenuOverlay";
 import Image from "next/image";
 import { FaBars } from "react-icons/fa6";
 import { IoCloseSharp } from "react-icons/io5";
+import { usePathname } from "next/navigation";
 
 const navLinks = [
   {
@@ -51,6 +52,10 @@ const Navbar = ({ visibleDefault, fixed = true }: Props) => {
     }
   }, [fixed, prevScrollPos, visible]);
 
+// navbar active?
+  const pathname = usePathname();
+  console.log(3, pathname);
+
   return (
     <header>
       <nav
@@ -89,11 +94,12 @@ const Navbar = ({ visibleDefault, fixed = true }: Props) => {
 
           <div className="menu hidden md:block md:w-auto" id="navbar">
             <ul className="flex p-4 md:p-0 md:flex-row md:space-x-8 mt-0 ">
-              {navLinks.map((link, index) => (
+              {navLinks.map((link, index) => {
+                return(
                 <li className="" key={index}>
                   <NavLink href={link.path} title={link.title} />
                 </li>
-              ))}
+              )})}
             </ul>
           </div>
         </div>

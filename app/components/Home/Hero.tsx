@@ -15,7 +15,7 @@ function Hero({ title, description }: any) {
   const { viberLink, telegramLink, phoneNumber } = Contacts();
 
   return (
-    <div className="relative flex flex-col md:flex-row gap-0 md:gap-10 mx-[20px] md:mx-[80px] lg:mx-[200px] h-[520px] md:h-[450px] lg:h-[550px]">
+    <div className="relative flex flex-col md:flex-row gap-0 md:gap-10 mx-[20px] md:mx-[80px] lg:mx-[200px] h-[520px] md:h-[450px] lg:h-[550px] select-none">
       <div className="flex-col">
         <div>
           <h1 className="text-xl lg:text-4xl font-bold lg:mt-[50px] w-full xl:w-[540px]">
