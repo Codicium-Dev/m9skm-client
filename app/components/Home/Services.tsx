@@ -40,7 +40,7 @@ export default function Services({
                 className="w-full object-cover"
               />
             </div>
-            <p className="text-center">{subTitle1}</p>
+            <p className="text-center font-semibold">{subTitle1}</p>
             <p className="text-center">{subDescription1}</p>
           </div>
           {/* card */}
@@ -54,7 +54,7 @@ export default function Services({
                 className="w-full object-cover"
               />
             </div>
-            <p className="text-center">{subTitle2}</p>
+            <p className="text-center font-semibold">{subTitle2}</p>
             <p className="text-center">{subDescription2}</p>
           </div>
           {/* card */}
@@ -68,7 +68,7 @@ export default function Services({
                 className="w-full object-cover"
               />
             </div>
-            <p className="text-center">{subTitle3}</p>
+            <p className="text-center font-semibold">{subTitle3}</p>
             <p className="text-center">{subDescription3}</p>
           </div>
         </div>

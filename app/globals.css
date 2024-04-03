@@ -104,7 +104,7 @@
     font-weight: bold;
   }
   .myDesc {
-    font-size: 15px;
+    font-size: 14px;
   }
 }
 
@@ -142,7 +142,6 @@
   .subTitleMM {
     font-size: 20px;
     font-weight: bold;
-    /* color: yellowgreen; */
   }
   .blogTitle {
     font-size: 20px;
