@@ -1,14 +1,16 @@
 "use client";
 import Image from "next/image";
-import heroApp from "@/public/assets/home-page/hero_app.png";
-import { Button } from "@/components/ui/button";
-import { IoIosArrowDown } from "react-icons/io";
 import Link from "next/link";
-import Viber from "../../../public/assets/footer/footer-viber.png";
-import Telegram from "../../../public/assets/footer/footer-telegram.png";
-import Phone from "../../../public/assets/footer/footer-phone.png";
-import Contacts from "../utilities/Contacts";
+import { IoIosArrowDown } from "react-icons/io";
+
 import { DIRECT_DOWNLOAD_URL } from "@/app/constants";
+import { Button } from "@/components/ui/button";
+import heroApp from "@/public/assets/home-page/hero_app.png";
+
+import Phone from "../../../public/assets/footer/footer-phone.png";
+import Telegram from "../../../public/assets/footer/footer-telegram.png";
+import Viber from "../../../public/assets/footer/footer-viber.png";
+import Contacts from "../utilities/Contacts";
 
 function Hero({ title, description }: any) {
   const { viberLink, telegramLink, phoneNumber } = Contacts();
@@ -21,7 +23,7 @@ function Hero({ title, description }: any) {
           <h1 className="text-xl lg:text-4xl font-bold lg:mt-[50px] w-full xl:w-[540px]">
             {title}
           </h1>
-          <p className="mt-5 text-sm lg:text-lg w-full xl:w-[540px]">
+          <p className="mt-5 text-sm lg:text-lg w-full xl:w-[540px] leading-relaxed">
             {description}
           </p>
         </div>

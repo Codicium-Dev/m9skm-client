@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import React from "react";
+
 export default function Services({
   title,
   descripiton,
@@ -41,7 +42,7 @@ export default function Services({
               />
             </div>
             <p className="text-center font-semibold">{subTitle1}</p>
-            <p className="text-center">{subDescription1}</p>
+            <p className="text-center leading-relaxed">{subDescription1}</p>
           </div>
           {/* card */}
           <div className="flex flex-col gap-3 w-full md:w-1/3 items-center">
@@ -55,7 +56,7 @@ export default function Services({
               />
             </div>
             <p className="text-center font-semibold">{subTitle2}</p>
-            <p className="text-center">{subDescription2}</p>
+            <p className="text-center leading-relaxed">{subDescription2}</p>
           </div>
           {/* card */}
           <div className="flex flex-col gap-3 w-full md:w-1/3 items-center">
@@ -69,7 +70,7 @@ export default function Services({
               />
             </div>
             <p className="text-center font-semibold">{subTitle3}</p>
-            <p className="text-center">{subDescription3}</p>
+            <p className="text-center leading-relaxed">{subDescription3}</p>
           </div>
         </div>
       </div>

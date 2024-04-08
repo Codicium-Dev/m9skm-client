@@ -1,15 +1,16 @@
+import axios from "axios";
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
 import Link from "next/link";
+import React, { useEffect, useState } from "react";
+
+import { API_URL } from "@/app/constants";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
-  CarouselPrevious,
+  CarouselPrevious
 } from "@/components/ui/carousel";
-import axios from "axios";
-import { API_URL } from "@/app/constants";
 
 const Blogs = () => {
   const [news, setNews] = useState([]);
@@ -60,7 +61,7 @@ const Blogs = () => {
                     <div className="absolute top-0 pt-[160px] lg:opacity-0 lg:hover:opacity-100 inset-0 flex items-center justify-center transition-opacity duration-500  ">
                       <div className="text-white p-5 bg-black bg-opacity-50 w-full h-full flex items-center">
                         <h3
-                          className="text-sm md:text-lg font-semibold"
+                          className="text-sm md:text-base lg:text-lg font-semibold"
                           dangerouslySetInnerHTML={{
                             __html: newItem?.title
                               ? newItem?.title.substr(0, 90) +

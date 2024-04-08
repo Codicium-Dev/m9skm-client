@@ -1,11 +1,12 @@
 "use client";
-import Navbar from "@/app/components/nav/Navbar";
-import Image from "next/image";
-import { useEffect, useState } from "react";
 import axios from "axios";
-import Pagination from "@/app/components/utilities/Pagination";
-import Footer from "@/app/components/Footer";
+import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
+
+import Footer from "@/app/components/Footer";
+import Navbar from "@/app/components/nav/Navbar";
+import Pagination from "@/app/components/utilities/Pagination";
 import { API_URL } from "@/app/constants";
 
 const PAGE_SIZE = 4;
@@ -43,7 +44,7 @@ function page() {
     <>
       <Navbar visibleDefault={true} fixed={false} />
 
-      <div className="flex flex-wrap gap-5 justify-center px-5 pt-5 pb-10 ">
+      <div className="flex flex-wrap gap-5 justify-center px-5 lg:max-w-[1200px] lg:mx-auto pt-5 pb-10">
         {/* card */}
         {paginatedData?.map((item: any) => {
           return (
