@@ -1,15 +1,15 @@
-import React from "react";
-import { usePathname } from "next/navigation";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import React from "react";
 
 interface Props {
-  blogId?: string|string[];
+  blogId?: string | string[];
 }
-const MenuOverlay = ({blogId}:Props) => {
+const MenuOverlay = ({ blogId }: Props) => {
   const pathname = usePathname();
 
   return (
-    <ul className="flex flex-col pt-2 pb-4 items-center ">
+    <ul className="flex flex-col pt-2 pb-4 items-center  ">
       <li>
         <Link
           href={"/"}
@@ -24,7 +24,9 @@ const MenuOverlay = ({blogId}:Props) => {
         <Link
           href={"/blogs"}
           className={`block py-2 pl-3 pr-4 text-black text-sm lg:text-lg rounded md:p-0 hover:text-[#F2ECC7] ${
-            pathname === "/blogs" || pathname === `/blogs/${blogId}` ? "text-white font-semibold" : ""
+            pathname === "/blogs" || pathname === `/blogs/${blogId}`
+              ? "text-white font-semibold"
+              : ""
           }`}
         >
           BLOGS

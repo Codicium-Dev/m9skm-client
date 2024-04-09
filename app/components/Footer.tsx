@@ -1,11 +1,13 @@
 "use client";
 import Image from "next/image";
-import React from "react";
-import Viber from "../../public/assets/footer/footer-viber.png";
-import Telegram from "../../public/assets/footer/footer-telegram.png";
-import Phone from "../../public/assets/footer/footer-phone.png";
 import Link from "next/link";
+import React from "react";
+
+import Phone from "../../public/assets/footer/footer-phone.png";
+import Telegram from "../../public/assets/footer/footer-telegram.png";
+import Viber from "../../public/assets/footer/footer-viber.png";
 import Contacts from "./utilities/Contacts";
+
 const Footer = ({ footerColor }: { footerColor: string }) => {
   const { viberLink, telegramLink, phoneNumber } = Contacts();
 
@@ -18,7 +20,7 @@ const Footer = ({ footerColor }: { footerColor: string }) => {
       <p className="subTitleMM text-center pb-7 font-bold">ဆက်သွယ်ရန်</p>
 
       <div className="flex flex-col lg:flex-row items-center px-3 md:px-5 justify-center gap-5 text-white font-semibold ">
-        <Link href={viberLink}>
+        <Link target="_blank" href={viberLink}>
           <div className="flex gap-4 md:gap-5 items-center w-[290px] md:min-w-[310px] lg:w-[29%] max-w-[330px] p-3 bg-[#573187] rounded-lg">
             <Image
               src={Viber}
@@ -31,7 +33,7 @@ const Footer = ({ footerColor }: { footerColor: string }) => {
           </div>
         </Link>
 
-        <Link href={telegramLink}>
+        <Link target="_blank" href={telegramLink}>
           <div className="flex gap-4 md:gap-5 items-center w-[290px] md:min-w-[310px] lg:w-[29%] max-w-[330px] p-3 bg-[#0082be] rounded-lg">
             <Image
               src={Telegram}
@@ -45,7 +47,7 @@ const Footer = ({ footerColor }: { footerColor: string }) => {
             </p>
           </div>
         </Link>
-        <Link href={`tel:${phoneNumber}`}>
+        <Link target="_blank" href={`tel:${phoneNumber}`}>
           <div className="flex gap-4 md:gap-5 items-center w-[290px] md:min-w-[310px] lg:w-[29%] max-w-[330px] p-3 bg-[#58b961] rounded-lg">
             <Image
               src={Phone}
@@ -60,14 +62,12 @@ const Footer = ({ footerColor }: { footerColor: string }) => {
       </div>
 
       <div className="flex w-full my-5 px-5 lg:px-20 justify-between text-sm md:text-base">
-        <Link href={"/privacy&policy"}>
+        <Link target="_blank" href={"/privacy&policy"}>
           <p>Privacy Policy</p>
         </Link>
-        <Link href={"/terms"}>
-        <p>Terms of Service</p>
+        <Link target="_blank" href={"/terms"}>
+          <p>Terms of Service</p>
         </Link>
-
-        
       </div>
 
       <p className="mt-5 text-center">Copyright &copy; 2024</p>

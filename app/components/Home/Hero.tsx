@@ -30,6 +30,7 @@ function Hero({ title, description }: any) {
 
         <Link
           href={DIRECT_DOWNLOAD_URL}
+          target="_blank"
           className="mt-4 py-2 px-5 rounded-md w-fit border bg-transparent border-black hover:bg-black hover:text-white block transition-all duration-300"
         >
           Download Now
@@ -39,7 +40,7 @@ function Hero({ title, description }: any) {
           <p className="subTitleMM pb-2 font-bold">ဆက်သွယ်ရန်</p>
 
           <div className="flex gap-5 ">
-            <Link href={viberLink}>
+            <Link href={viberLink} target="_blank">
               <div className="flex gap-4 md:gap-5 items-center bg-[#573187] rounded-lg overflow-hidden hover:scale-105 ">
                 <Image
                   src={Viber}
@@ -51,7 +52,7 @@ function Hero({ title, description }: any) {
               </div>
             </Link>
 
-            <Link href={telegramLink}>
+            <Link href={telegramLink} target="_blank">
               <div className="flex gap-4 md:gap-5 items-center bg-[#0082be] rounded-lg overflow-hidden hover:scale-105 ">
                 <Image
                   src={Telegram}
@@ -62,7 +63,7 @@ function Hero({ title, description }: any) {
                 ></Image>
               </div>
             </Link>
-            <Link href={`tel:${phoneNumber}`}>
+            <Link href={`tel:${phoneNumber}`} target="_blank">
               <div className="flex gap-4 md:gap-5 items-center bg-[#58b961] rounded-lg overflow-hidden hover:scale-105 ">
                 <Image
                   src={Phone}
