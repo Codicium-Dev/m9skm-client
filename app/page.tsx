@@ -1,15 +1,17 @@
 "use client";
-import Navbar from "./components/nav/Navbar";
-import Hero from "./components/Home/Hero";
-import Services from "./components/Home/Services";
+
 import { useEffect, useState } from "react";
-import Matches from "./components/Home/Matches";
-import ShowCase from "./components/Home/ShowCase";
-import News from "./components/Home/Blogs";
-import Footer from "./components/Footer";
-import axios from "axios";
-import Loading from "./loading";
+
 import { API_URL } from "@/app/constants";
+import Footer from "./components/Footer";
+import Hero from "./components/Home/Hero";
+import Loading from "./loading";
+import Matches from "./components/Home/Matches";
+import Navbar from "./components/nav/Navbar";
+import News from "./components/Home/Blogs";
+import Services from "./components/Home/Services";
+import ShowCase from "./components/Home/ShowCase";
+import axios from "axios";
 
 export default function Home() {
   const [texts, setTexts]: any = useState([]);

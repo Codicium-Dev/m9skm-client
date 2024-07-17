@@ -1,7 +1,7 @@
-import Image from "next/image";
 import Ball from "@/public/assets/home-page/loading-ball.png";
-import Navbar from "@/app/components/nav/Navbar";
 import Footer from "@/app/components/Footer";
+import Image from "next/image";
+import Navbar from "@/app/components/nav/Navbar";
 
 const Loading = () => {
   return (
@@ -18,7 +18,7 @@ const Loading = () => {
           ></Image>
         </div>
       </div>
-      <Footer footerColor=""/>
+      <Footer footerColor="" />
     </>
   );
 };
