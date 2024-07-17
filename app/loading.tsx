@@ -1,5 +1,5 @@
-import Image from "next/image";
 import Ball from "@/public/assets/home-page/loading-ball.png";
+import Image from "next/image";
 
 const Loading = () => {
   return (
